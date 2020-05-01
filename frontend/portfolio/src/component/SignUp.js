@@ -1,53 +1,154 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
+import axios from 'axios'
+
 
 export default class SignUp extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            name : '',
+            age  : '',
+            email : '',   
+            phone  : '',    
+            address : '',  
+            About_me : '',  
+            username  : '',
+            password : '',
+            password2 : '', 
+        }
+    }
+    changeHandler = (e) => {
+        this.setState({[e.target.name] : e.target.value})
+    }
+    submitHandler = e => {
+        e.preventDefault()
+        console.log(this.state)
+        axios.post('http://127.0.0.1:8000/signup/', this.state)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
+    }
     render() {
+
+        const {name, age, email, phone, address, About_me, username, password, password2} = this.state
         return (
             <div className='container container-fluid'>
 
             
-            <form>
+            <form onSubmit = {this.submitHandler}>
                 <h3>Sign Up</h3>
 
                 <div className="form-group">
                     <label>Full Name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
+                    <input 
+                    name = 'name'
+                    value = {name}
+                    onChange = {this.changeHandler}
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Full Name" />
                 </div>
 
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <input 
+                     name = 'username'
+                     value = {username}
+                     onChange = {this.changeHandler}
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Last name" />
                 </div>
+
                 <div className="form-group">
                     <label>Address</label>
-                    <input type="text" className="form-control" placeholder="Address" />
+                    <input
+                     name = 'address'
+                     value = {address}
+                     onChange = {this.changeHandler}
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Address" />
                 </div>
+
                 <div className="form-group">
                     <label>Age</label>
-                    <input type="number" className="form-control" placeholder="Age" />
+                    <input
+                     name = 'age'
+                     value = {age} 
+                     onChange = {this.changeHandler}
+                    type="number" 
+                    className="form-control" 
+                    placeholder="Age" />
                 </div>
+
                 <div className="form-group">
                     <label>Phone</label>
-                    <input type="number" className="form-control" placeholder="Phone" />
+                    <input
+                     name = 'phone'
+                     value = {phone}
+                     onChange = {this.changeHandler} 
+                    type="number" 
+                    className="form-control" 
+                    placeholder="Phone" />
                 </div>
+
                 <div className="form-group">
                     <label>About Me</label>
-                    <textarea className="form-control" placeholder="About me"> </textarea>
+                    <textarea
+                     name = 'About_me'
+                     value = {About_me}
+                     onChange = {this.changeHandler} 
+                    className="form-control" 
+                    placeholder="About me"> 
+                    </textarea>
                 </div>
 
                 <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <input
+                     name = 'email'
+                     value = {email} 
+                     onChange = {this.changeHandler}
+                    type="email" 
+                    className="form-control" 
+                    placeholder="Enter email" />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input
+                     name = 'password'
+                     value = {password} 
+                     onChange = {this.changeHandler}
+                    type="password" 
+                    className="form-control" 
+                    placeholder="Enter password" />
+                </div>
+                <div className="form-group">
+                    <label>Confirm Password</label>
+                    <input
+                     name = 'password2'
+                     value = {password2} 
+                     onChange = {this.changeHandler}
+                    type="password" 
+                    className="form-control" 
+                    placeholder="Confirm password" />
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                <button 
+                type="submit" 
+                className="btn btn-primary btn-block">
+                Sign Up
+                </button>
+
                 <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
+                    Already registered {<Link style={{textDecoration: 'none', color:'black'}} to='/signin'>Sign IN</Link>}
                 </p>
             </form>
             </div>

@@ -6,33 +6,34 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
     return ( 
         <div>
-               <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Kolikay</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+               <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <a className="navbar-brand" href="/">Kolikay</a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" >{<Link style={{textDecoration: 'none', color:'black'}} to='/'>home</Link>}</a>
+  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul className="navbar-nav mr-auto">
+      <li className="nav-item active">
+       {<Link className="nav-link" style={{color:'blue'}}  to='/'>home</Link>}
         
       </li>
-      <li class="nav-item">
-        <a class="nav-link" >{<Link style={{textDecoration: 'none', color:'black'}} to='/profile'>Profile</Link>}</a>
+      <li className="nav-item">
+        {<Link className="nav-link"  to='/profile'>Profile</Link>}
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" >{<Link style={{textDecoration: 'none', color:'black'}} to='/'>home</Link>}</a>
-          <a class="dropdown-item" >{<Link style={{textDecoration: 'none', color:'black'}} to='/resume'>Resume</Link>}</a>
-          <a class="dropdown-item" >{<Link style={{textDecoration: 'none', color:'black'}} to='/signin'>Sign In</Link>}</a>
-          <a class="dropdown-item" >{<Link style={{textDecoration: 'none', color:'black'}} to='/signup'>Sign Up</Link>}</a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          {<Link className="dropdown-item" style={{color:'blue'}} to='/'>home</Link>}
+          {<Link className="dropdown-item" style={{color:'black'}} to='/resume'>Resume</Link>}
+          {<Link className="dropdown-item" style={{color:'black'}} to='/signin'>Sign In</Link>}
+          {<Link className="dropdown-item" style={{color:'black'}} to='/signup'>Sign Up</Link>}
           
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/">{<Link style={{textDecoration: 'none', color:'black'}} to='/project'>Project</Link>}</a>
+          <div className="dropdown-divider"></div>
+          {<Link className="dropdown-item"  style={{textDecoration: 'none', color:'black'}} to='/project'>Project</Link>}
         </div>
       </li>
      

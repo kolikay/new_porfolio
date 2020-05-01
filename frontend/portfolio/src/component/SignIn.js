@@ -1,23 +1,64 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Signin extends Component {
+        constructor(props){
+            super(props)
+
+            this.state = {
+                username : '',
+                password : '',
+            }
+        }
+        
+        changeHandler = e => {
+            this.setState({ [e.target.name] : e.target.value })
+        }
+        handleSubmit = e => {
+            e.preventDefault()
+            console.log(this.state)
+            axios.post('http://127.0.0.1:8000/signin/', this.state)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+
     render() {
+
+        const {username, password} = this.state
         return (
             <div className='container container-fluid'>
                 <div className='row'>
                     <div className='col-12'>
 
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                 <h3>Sign In</h3>
 
                 <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <label>Username</label>
+                    <input 
+                    name = 'username'
+                    value={username}
+                    type="text" 
+                    onChange = {this.changeHandler}
+                    className="form-control"
+                     placeholder="Username" 
+                     
+                     />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input 
+                    name ='password'
+                    value = {password}
+                    onChange = {this.changeHandler}
+                    type="password"
+                     className="form-control" 
+                     placeholder="Enter password" />
                 </div>
 
                 <div className="form-group">

@@ -4,10 +4,13 @@ from .models import UserProfile, Resume
 from .serializer import UserRegistrationSerializer, ResumeSerializer, UserProfileSerializer
 from rest_framework import viewsets, generics, permissions
 from portfolio.forms import LoginForm, SignUpForm
-from django.contrib.auth import authenticate, login, get_user_model, logout
+from django.contrib.auth import authenticate,  get_user_model, logout
 from .models import UserProfile
 from django import forms
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_exempt
+
+
 
 
 def index(request):
@@ -37,19 +40,20 @@ class ResumeViewSet(viewsets.ModelViewSet):
 
 
 #Api for logging users in
-def login_page(request):
-    login_form = LoginForm(request.POST or None)
-    context = {'login_form': login_form}
-    if login_form.is_valid():
-        username = login_form.cleaned_data.get('username')
-        password = login_form.cleaned_data.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect ('/')
-        else:
-            return HttpResponse("Invalid Login details provided")
-    return render(request, 'portfolio/login_form.html', context)
+
+# def login_page(request):
+#     login_form = LoginForm(request.POST or None)
+#     context = {'login_form': login_form}
+#     if login_form.is_valid():
+#         username = login_form.cleaned_data.get('username')
+#         password = login_form.cleaned_data.get('password')
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect ('/')
+#         else:
+#             return HttpResponse("Invalid Login details provided")
+#     return render(request, 'portfolio/login_form.html', context)
 
 
 
