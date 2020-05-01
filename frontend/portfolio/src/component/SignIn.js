@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Redirect from 'react-router-dom'
 
 export default class Signin extends Component {
         constructor(props){
@@ -11,9 +12,12 @@ export default class Signin extends Component {
             }
         }
         
+
+
         changeHandler = e => {
             this.setState({ [e.target.name] : e.target.value })
         }
+        
         handleSubmit = e => {
             e.preventDefault()
             console.log(this.state)
@@ -24,6 +28,7 @@ export default class Signin extends Component {
             .catch(error => {
                 console.log(error)
             })
+          
         }
 
     render() {

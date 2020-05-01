@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component} from 'react';
 import './App.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
@@ -6,14 +6,27 @@ import Nav from './component/Nav'
 import RoutingPage from './component/RoutingPage';
 
 
-const App = () => {
-  return (
-    <div>
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      loggedInStatus : 'notLoggedIn',
+      user : {}
+    }
+
+
+  }
+  render (){
+    return (
+      <div>
       <Nav />
       <RoutingPage />
      
-</div>
-  );
+      </div>
+    )
+  }
+  
+ 
 }
 
 export default App;
