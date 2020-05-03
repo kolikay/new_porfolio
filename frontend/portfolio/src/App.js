@@ -7,6 +7,7 @@ import RoutingPage from './component/RoutingPage';
 
 
 
+
 class App extends Component {
   constructor(){
     super()
@@ -14,11 +15,12 @@ class App extends Component {
   }
   render (){
     return (
-      <div>
+       <div>
       <Nav />
       <RoutingPage />
      
       </div>
+
     )
   }
   
@@ -29,3 +31,29 @@ export default App;
 
 
 
+
+
+// import { Layout, Header, Drawer, Content, Navigation} from 'react-mdl'
+//       <div className="demo-big-content">
+//       <Layout>
+//           <Header title="Title" scroll>
+//               <Navigation>
+//                   <a href="#">Link</a>
+//                   <a href="#">Link</a>
+//                   <a href="#">Link</a>
+//                   <a href="#">Link</a>
+//               </Navigation>
+//           </Header>
+//           <Drawer title="Title">
+//               <Navigation>
+//                   <a href="#">Link</a>
+//                   <a href="#">Link</a>
+//                   <a href="#">Link</a>
+//                   <a href="#">Link</a>
+//               </Navigation>
+//           </Drawer>
+//           <Content>
+//               <RoutingPage />
+//           </Content>
+//       </Layout>
+//   </div>

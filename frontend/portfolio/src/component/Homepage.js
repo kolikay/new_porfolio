@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import axios from 'axios';
+import '../App.css';
 
 
 
@@ -36,18 +37,11 @@ class Homepage extends Component {
         const text = loading && !error ? <p>Please wait while file is loaded from the server.......</p>: null
         
         return (
-            <div>
              <div>
-            <h3>{text}</h3>
-            </div> 
-             <div>
+             <h3>{text}</h3>
              {posts ? posts.map(post => <ul key={post.id}><b>username</b> {  post.username}  <b>fullname</b> {  post.name} {post.title} </ul>):null}
-             </div>
-            <p>{error}</p>
-             </div>
-          
-            
-            );
+             <p>{error}</p>
+             </div>);
     }
 }
  

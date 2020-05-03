@@ -1,0 +1,86 @@
+.navbar{
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0%;  
+    min-height: 100px;
+    border: hidden;  
+    
+    }
+.nav-link{
+    color: white !important;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+.profile-left{
+    border: thin;
+    border-color: #6DD5FA;
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.profile-image{
+    height: 250px;
+    padding-left: 30%;
+    margin: auto;
+
+   
+}
+.banner-text{
+    
+    background-color: black;
+    opacity: .8;
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+    text-align: center;
+    
+}
+.banner-text h1{
+    margin: 1%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.profile-right{
+    background-color: black;
+    opacity: 40%;
+    width: 100%;
+    border-radius: 15px;
+    text-align: center;
+    color: white;  
+    padding: 5%;  
+    padding-top: 0.5%;
+}
+.banner-text1 {
+    background-color: black;
+    opacity: .8;
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+    text-align: center;   
+}
+
+.banner-text1 p{
+    margin: 0%;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+.social-link{
+    display: flex;
+    justify-content:space-between;
+    width: 50%;
+    margin: auto;
+}
+
+.social-link i {
+   color: blanchedalmond;
+   font-size: 5em;
+   padding: 8px;
+}

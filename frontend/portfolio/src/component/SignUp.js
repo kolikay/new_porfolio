@@ -160,8 +160,9 @@ export default class SignUp extends Component {
                 </div>
 
                 <button 
+                style={{backgroundColor: '#6DD5FA'}}
                 type="submit" 
-                className="btn btn-primary btn-block">
+                className="btn btn-block">
                 Sign Up
                 </button>
 
