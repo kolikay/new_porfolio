@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Redirect from 'react-router-dom'
+
 
 export default class Signin extends Component {
         constructor(props){
@@ -15,21 +15,23 @@ export default class Signin extends Component {
 
 
         changeHandler = e => {
+            
             this.setState({ [e.target.name] : e.target.value })
         }
-        
         handleSubmit = e => {
-            e.preventDefault()
-            console.log(this.state)
-            axios.post('http://127.0.0.1:8000/signin/', this.state)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-          
-        }
+        e.preventDefault()
+        console.log(this.state)
+        axios.post('http://127.0.0.1:8000/signin/', this.state)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            alert(error.message)
+    })
+  
+}
+
+      
 
     render() {
 
@@ -87,3 +89,4 @@ export default class Signin extends Component {
         );
     }
 }
+

@@ -24,6 +24,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     serializer_class = UserProfileSerializer
     queryset = UserProfile.objects.all()
+    permission_classes  = [permissions.AllowAny]
 
 
 #Handles signing up of users

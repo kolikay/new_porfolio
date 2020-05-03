@@ -6,15 +6,11 @@ import Nav from './component/Nav'
 import RoutingPage from './component/RoutingPage';
 
 
+
 class App extends Component {
   constructor(){
     super()
-    this.state = {
-      loggedInStatus : 'notLoggedIn',
-      user : {}
-    }
-
-
+   
   }
   render (){
     return (
@@ -30,3 +26,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+

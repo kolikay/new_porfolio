@@ -15,7 +15,9 @@ export default class SignUp extends Component {
             About_me : '',  
             username  : '',
             password : '',
-            password2 : '', 
+            password2 : '',
+            error: '' ,
+            status: '',
         }
     }
     changeHandler = (e) => {
@@ -27,19 +29,35 @@ export default class SignUp extends Component {
         axios.post('http://127.0.0.1:8000/signup/', this.state)
         .then(response => {
             console.log(response)
+            this.setState({ status: response.status})
+            
         })
+       
         .catch(error => {
             console.log(error)
+            this.setState({
+                error : <p>Registration Failed</p>
+            })
         })
 
     }
-    render() {
+    
+  
 
-        const {name, age, email, phone, address, About_me, username, password, password2} = this.state
+    render() {
+     
+       
+        const {error, status, name, age, email, phone, address, About_me, username, password, password2} = this.state
+        console.log(status)
+
+
         return (
             <div className='container container-fluid'>
-
-            
+                <h4>{error}</h4>
+                <h4>{status == 201 ? <h4>Registration was successful</h4>: null}</h4>
+                
+                    
+             
             <form onSubmit = {this.submitHandler}>
                 <h3>Sign Up</h3>
 
