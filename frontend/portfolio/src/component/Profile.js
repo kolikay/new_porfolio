@@ -3,7 +3,8 @@ import { Grid, Cell } from 'react-mdl';
 
 
 const Profile = () => {
-    return ( <div style={{width: '100%', margin: 'auto'}}>
+    return ( 
+    <div style={{width: '100%', margin: 'auto'}}>
                 <Grid className='profile-left'>
                     <Cell col={6}> 
                     <img 
@@ -32,7 +33,7 @@ Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
 
                     </Cell>
                 </Grid>
-                <div className = 'banner-text1'>
+                        <div className = 'banner-text1'>
                         <p>HTML/CSS | JAVASCRIPT | REACT | PYTHON | DJANGO | REACT NATIVE | NODE JS</p>
 
                         <div className='social-link'>
@@ -49,14 +50,13 @@ Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
                         </a>
 
                        
+                          </div>
                         </div>
-
-                      
-                        
-                    </div>
+                        </div>
+                   
                     
                 
-            </div> );
+            );
 }
  
 export default Profile;
