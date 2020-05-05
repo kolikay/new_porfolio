@@ -6,6 +6,7 @@ import Project from './Projects'
 import Profile from './Profile'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import Test from './Test'
 
 
 
@@ -19,6 +20,7 @@ const RoutingPage = () => {
             <Route path ="/profile" component={Profile} />
             <Route path ="/signin" component={SignIn} />
             <Route path ="/signup" component={SignUp} />
+            <Route path ="/test" component={Test} />
         
         </Switch>
     )

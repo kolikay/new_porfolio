@@ -14,7 +14,11 @@
     font-weight: bold;
     
 }
-.profile-left{
+.card{
+    background-color: inherit;
+    border: inherit;
+}
+.profile{
     border: thin;
     border-color: #6DD5FA;
     background: #2980B9;  /* fallback for old browsers */
@@ -23,29 +27,30 @@
 
 }
 .profile-image{
-    height: 250px;
-    padding-left: 30%;
-    margin: auto;
-
-   
+    height: 350px;
+    padding-bottom: 2%;
+    margin-left: 22%;   
 }
+
+
 .banner-text{
     
     background-color: black;
     opacity: .8;
-    width: 60%;
-    margin: auto;
+    width: 70%;
     border-radius: 15px;
     text-align: center;
-    
+    margin-left: 20%;  
 }
-.banner-text h1{
-    margin: 1%;
+
+.banner-text h4 {
     color: white;
-    font-size: 30px;
-    font-weight: bold;
-    
+    font-size: 25px;
+    padding-top: 10px;
 }
+
+
+
 .profile-right{
     background-color: black;
     opacity: 40%;
@@ -55,23 +60,9 @@
     color: white;  
     padding: 5%;  
     padding-top: 0.5%;
-}
-.banner-text1 {
-    background-color: black;
-    opacity: .8;
-    width: 60%;
-    margin: auto;
-    border-radius: 15px;
-    text-align: center;   
+
 }
 
-.banner-text1 p{
-    margin: 0%;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    
-}
 .social-link{
     display: flex;
     justify-content:space-between;
@@ -80,7 +71,37 @@
 }
 
 .social-link i {
-   color: blanchedalmond;
+   color: white;
    font-size: 5em;
    padding: 8px;
+}
+
+.banner-text-image{
+    
+    background-color: black;
+    opacity: .8;
+    width: 50%;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 22%;  
+    
+}
+
+.banner-text-image h1{
+    margin: 1%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;    
+}
+
+.about-me{
+    background-color: black;
+    opacity: 40%;
+    width: 100%;
+    border-radius: 15px;
+    text-align: center;
+    color: white;  
+    padding: 5%;  
+    padding-top: 0.5%;
+
 }
