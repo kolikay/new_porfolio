@@ -13,7 +13,7 @@ const Nav = () => {
           <Link className="navbar-brand" to="/" style={{fontSize:'1.5em', color: 'white', fontFamily: 'Courier New Courier monospace'}}>Kolikay</Link>
           <img className='logo'
           src={require('../component/images/k.png')}
-          alt="image"
+          alt=""
           />
           
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -53,7 +53,7 @@
     width: 100%;
     border-radius: 15px;
     text-align: center;
-    color: white;  
+    color: rgb(226, 197, 29);  
     padding: 5%;  
     padding-top: 0.5%;
 
@@ -67,7 +67,7 @@
 }
 
 .social-link i {
-   color: white;
+   color: rgb(226, 197, 29);
    font-size: 5em;
    padding: 8px;
 }
@@ -136,6 +136,7 @@
     text-align: center;
     padding-top: 10px; 
     font-family: cursive;
+    
 }
 .btn:hover{
     background-color: rgb(226, 197, 29);

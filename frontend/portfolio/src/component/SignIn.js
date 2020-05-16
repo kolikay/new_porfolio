@@ -81,7 +81,7 @@ export default class Signin extends Component {
 
                 <button style={{backgroundColor: '#6DD5FA'}} type="submit" className="btn  btn-block">Submit</button>
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <a href="/signin">password?</a>
                 </p>
             </form>
          

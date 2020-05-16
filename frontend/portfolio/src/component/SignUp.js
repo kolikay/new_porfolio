@@ -54,7 +54,7 @@ export default class SignUp extends Component {
         return (
             <div className='container container-fluid'>
                 <h4>{error}</h4>
-                <h4>{status == 201 ? <h4>Registration was successful</h4>: null}</h4>
+                <h4>{status === 201 ? <h4>Registration was successful</h4>: null}</h4>
                 
                     
              

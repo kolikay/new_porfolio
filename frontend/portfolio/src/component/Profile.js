@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Cell } from 'react-mdl';
+
+
 
 
 const Profile = () => {
@@ -14,9 +15,8 @@ const Profile = () => {
                             alt='avatar'
                             className='profile-image'
                             />
-                            <div className='stack'>
-                                <h1>Full Stack Developer</h1>
-                            </div>
+                            <div className='stack'><h1>Full Stack Developer</h1></div>
+                            <div className='btn btn-lg  btn-primary'>Full Stack Developer</div>
                     </div>
                 </div>
             </div>
