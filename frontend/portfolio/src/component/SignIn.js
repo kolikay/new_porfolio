@@ -39,9 +39,12 @@ export default class Signin extends Component {
         return (
             <div className='container container-fluid'>
                 <div className='row'>
-                    <div className='col-12'>
+                    <div className='col-4'>
+                    </div>
+                    <div className='col-6'>
 
-                    <form onSubmit={this.handleSubmit}>
+
+                    <form style={{paddingTop:'35%', width: '70%'}} onSubmit={this.handleSubmit}>
                 <h3>Sign In</h3>
 
                 <div className="form-group">
@@ -73,6 +76,7 @@ export default class Signin extends Component {
                         <input type="checkbox" className="custom-control-input" id="customCheck1" />
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
+                 
                 </div>
 
                 <button style={{backgroundColor: '#6DD5FA'}} type="submit" className="btn  btn-block">Submit</button>
@@ -80,6 +84,7 @@ export default class Signin extends Component {
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
+         
 
                     </div>
 

@@ -4,6 +4,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import Nav from './component/Nav'
 import RoutingPage from './component/RoutingPage';
+import './App.css';
 
 
 
@@ -15,7 +16,7 @@ class App extends Component {
     }
     render (){
             return (
-                  <div>
+                  <div >
                   <Nav />
                   <RoutingPage />
                 

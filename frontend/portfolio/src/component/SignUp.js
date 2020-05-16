@@ -58,7 +58,7 @@ export default class SignUp extends Component {
                 
                     
              
-            <form onSubmit = {this.submitHandler}>
+            <form style={{paddingTop:'7%'}} onSubmit = {this.submitHandler}>
                 <h3>Sign Up</h3>
 
                 <div className="form-group">
