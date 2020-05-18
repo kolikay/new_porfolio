@@ -20,9 +20,7 @@ class HomePage extends Component {
                                     <div className='col-12'>
                                         <h2>Welcome to our page</h2>
                                         <h4>A Webpage that showcases devolopers portfolios </h4>
-                                        <div className='btn btn-lg btn-secondary'>
-                                        <Link style={{color:'white'}} to='/about'>Read More ></Link>
-                                        </div>
+                                        <div className='btn btn-lg btn-secondary'>Read More > </div>
                                     </div>
                                 </div>
                             </div>
