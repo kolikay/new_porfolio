@@ -11,6 +11,7 @@ import Test from './Test'
 
 
 
+
 const RoutingPage = () => {
     return(
         
@@ -22,6 +23,7 @@ const RoutingPage = () => {
             <Route path ="/signin" component={SignIn} />
             <Route path ="/signup" component={SignUp} />
             <Route path ="/test" component={Test} />
+           
         
         </Switch>
     )

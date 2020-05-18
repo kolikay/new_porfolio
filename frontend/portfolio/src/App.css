@@ -105,7 +105,7 @@
 
 .homepage{
   
-    background-image: url("https://miro.medium.com/max/1400/1*9m3PUCJjSrpQaywO9vBC0w.jpeg");
+    background-image: url("https://i.imgur.com/AT2QCdh.jpg");
     background-position: center center ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -144,5 +144,24 @@
 
 }
 
+
+/* homepage detail style */
+
+.dev-pix{
+    height: 300px;
+    width: 600px;
+}
+@media screen and (max-width: 900px) {
+    .dev-pix {
+        height: 300px;
+        width: 600px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .dev-pix {
+        height: 200px;
+        width: 300px;
+    }
+  }
 
 

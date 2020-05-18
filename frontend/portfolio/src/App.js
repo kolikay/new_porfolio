@@ -4,6 +4,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import Nav from './component/Nav'
 import RoutingPage from './component/RoutingPage';
+import Footer from './component/Footer';
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
   <div >
     <Nav />
     <RoutingPage />
+    <Footer />
   
   </div> );
 }
