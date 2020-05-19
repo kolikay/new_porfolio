@@ -25,11 +25,24 @@ const Profile = () => {
                         </p>
                     </div>
                     <div className='col'>
-                        <img style={{height:'500px', width:'500px', paddingLeft:'80px', paddingBottom:'80px', paddingTop:'40px'}}
+                        <img style={{height:'600px', width:'600px', paddingLeft:'50px', paddingBottom:'80px', paddingTop:'40px'}}
                         src="https://i.imgur.com/McUrjwj.jpg"
-
                         />
 
+                    </div>
+                </div>
+                <div className='row' >
+                    <div className='col'>                        
+                        <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Quality</h4>
+                    </div> 
+                    <div className='col'>
+                        <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Professionalism</h4>
+                    </div> 
+                    <div className='col'>
+                        <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Experience</h4>
+                    </div> 
+                    <div className='col'>
+                        <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Honors</h4>
                     </div>
 
                 </div>
