@@ -5,7 +5,7 @@ const HomepageDetail = () => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-sm-12 col-md-6'>
-                    <h4 style={{paddingTop:'100px', 
+                    <h4 style={{paddingTop:'50px', 
                     color:'rgb(226, 197, 29)',
                     fontSize: '20px',
                     lineHeight: '26px',
@@ -22,7 +22,7 @@ const HomepageDetail = () => {
                         implementation of algorithms in a chosen programming language 
                         (commonly referred to as coding).</p>
                 </div>
-                <div className='col-sm-12 col-md-3 ' style={{paddingTop:'200px', paddingRight:'50px'}}>
+                <div className='col-sm-12 col-md-3 ' style={{paddingTop:'100px', paddingRight:'50px'}}>
                 <i class="fa fa-desktop" aria-hidden="true" style={{color:'rgb(226, 197, 29)', fontSize:'40px'}}></i>
                     <h4 > Web App Development</h4>
                     <p>A web developer or programmer is someone who takes a web design – 
@@ -30,7 +30,7 @@ const HomepageDetail = () => {
                         and turns it into a website. They do this by writing lines and 
                         lines of complicated code, using a variety of languages.</p>
                 </div>
-                <div className='col-sm-12 col-md-3' style={{paddingTop:'200px'}}>
+                <div className='col-sm-12 col-md-3' style={{paddingTop:'100px'}}>
                 <i className="fa fa-database"style={{color:'rgb(226, 197, 29)', fontSize:'40px'}}></i>
                     <h4 >Mobile App Development</h4>
                     <p>Mobile app development is the act or process by which a mobile app 
@@ -63,10 +63,8 @@ const HomepageDetail = () => {
                     </p>
 
                 </div>
-                <div className='col-sm-6  col-lg-6'>
-                    <img className='dev-pix' 
-                    src='https://imgur.com/BcrB3KO.jpg'
-                    />
+                <div className='col-sm-6 dev-pix  col-lg-6'>
+                    {/* dev image*/}
 
 
                 </div>

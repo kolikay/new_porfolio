@@ -152,6 +152,11 @@
 .dev-pix{
     height: 300px;
     width: 600px;
+    background-image: url(https://imgur.com/BcrB3KO.jpg);
+    background-position: center;
+    transition: 3s;
+    transition-delay: 1s;
+
 }
 @media screen and (max-width: 900px) {
     .dev-pix {
@@ -162,8 +167,14 @@
   @media screen and (max-width: 420px) {
     .dev-pix {
         height: 200px;
-        width: 300px;
+        width: 360px;
+        margin-bottom: 10px;
     }
-  }
+}
+
+.dev-pix:hover{
+    opacity: 70%;
+    background-image: url(https://i.imgur.com/yhDgaDg.jpg); 
+}
 
 
