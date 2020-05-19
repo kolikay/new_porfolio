@@ -2,7 +2,9 @@ import React from 'react';
 
 
 const Footer = () => {
-    return ( 
+    return ( <div className='container-fluid'>
+
+    
         <div className='row' style={{backgroundColor:'black', 
                                  color:'rgb(226, 197, 29)',
                                  paddingTop:'70px',
@@ -37,6 +39,7 @@ const Footer = () => {
                 </div>
 
             </div>
+        </div>
      );
 }
  

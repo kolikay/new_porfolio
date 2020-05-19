@@ -13,7 +13,21 @@
 
 /* profile page */
 
+.profile-top{
+    background-image: url(https://i.imgur.com/iFFBKSTl.jpg);
+    background-position: center center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    color: rgb(148, 132, 39);
+    text-align: center;
+    padding-top: 15%;
+}
 
+
+
+
+/* 
 .card{
     background-color: inherit;
     border: inherit;
@@ -22,8 +36,8 @@
     background: #141E30;  
     background: -webkit-linear-gradient(to top, #243B55, #141E30);
     background: linear-gradient(to top, #243B55, #141E30); 
-
     padding-top: 0%;
+   
 }
 .profile-image{
     height: 300px;
@@ -100,7 +114,7 @@
     padding: 5%;  
     padding-top: 0.5%;
 
-}
+} */
 /* home page style */
 
 .homepage{
@@ -114,6 +128,7 @@
     border: 0%;
     border-bottom: 0ch;
     opacity: 90%; 
+   
      
 }
 .homepage h2{
