@@ -138,9 +138,11 @@
     font-family: cursive;
     
 }
+
 .btn:hover{
     background-color: rgb(226, 197, 29);
     color: white;
+    
 
 }
 

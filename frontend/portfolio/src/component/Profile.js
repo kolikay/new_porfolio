@@ -16,7 +16,7 @@ const Profile = () => {
                             className='profile-image'
                             />
                             <div className='stack'><h1>Full Stack Developer</h1></div>
-                            <div className='btn btn-lg  btn-primary'>Full Stack Developer</div>
+                           
                     </div>
                 </div>
             </div>
