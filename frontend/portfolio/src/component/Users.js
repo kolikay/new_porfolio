@@ -58,7 +58,7 @@ class Homepage extends Component {
                                     {post.phone}
                                 </CardText>
                                 <CardActions border>
-                                    <Button colored> {post.About_me}</Button>
+                                    <img src={post.image} width='50px'/>
                                 </CardActions>  
                             </Card>)
                             :null}

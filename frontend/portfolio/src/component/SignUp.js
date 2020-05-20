@@ -12,7 +12,7 @@ export default class SignUp extends Component {
             email : '',   
             phone  : '',    
             address : '',  
-            About_me : '',  
+            about : '',  
             username  : '',
             password : '',
             password2 : '',
@@ -47,7 +47,7 @@ export default class SignUp extends Component {
     render() {
      
        
-        const {error, status, name, age, email, phone, address, About_me, username, password, password2} = this.state
+        const {error, status, name, age, email, phone, address, about, username, password, password2} = this.state
         console.log(status)
 
 
@@ -119,11 +119,11 @@ export default class SignUp extends Component {
                 <div className="form-group">
                     <label>About Me</label>
                     <textarea
-                     name = 'About_me'
-                     value = {About_me}
+                     name = 'about'
+                     value = {about}
                      onChange = {this.changeHandler} 
                     className="form-control" 
-                    placeholder="About me"> 
+                    placeholder="About "> 
                     </textarea>
                 </div>
 
