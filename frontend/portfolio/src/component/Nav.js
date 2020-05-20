@@ -23,7 +23,7 @@ const Nav = () => {
           <div className="collapse navbar-collapse " id="navbarSupportedContent">
             <ul className="navbar-nav navbar-right ">
               <li className="nav-item mr-4 active">
-              {<Link className="nav-link "  style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}  to='/'>Homepage</Link>}
+              {<Link className="nav-link "  style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}  to='/users'>Users</Link>}
                 
               </li>
               <li className="nav-item mr-4  ">

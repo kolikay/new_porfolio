@@ -1,4 +1,5 @@
 import React from 'react';
+import {ProgressBar} from'react-mdl'
 
 const Profile = () => {
     return ( 
@@ -32,20 +33,38 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className='row' >
-                    <div className='col'>                        
+                    <div className='col'>  
+                        <img src="https://i.imgur.com/2zXVvU6.png"/>                      
+                                            
                         <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Quality</h4>
+                        <p> The standard Lorem Ipsum passage, used since the 1500s
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
                     </div> 
                     <div className='col'>
+                        <img src="https://i.imgur.com/HpqP9AH.png"/>  
                         <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Professionalism</h4>
+                        <p> The standard Lorem Ipsum passage, used since the 1500s
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
                     </div> 
                     <div className='col'>
+                        <img style={{color:'rgb(226, 197, 29)'}} src="https://i.imgur.com/5tmRRWH.png"/>  
                         <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Experience</h4>
+                        <p> The standard Lorem Ipsum passage, used since the 1500s
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
                     </div> 
                     <div className='col'>
+                        <img src="https://i.imgur.com/ydG3ZSv.png"/>  
                         <h4 style={{ fontFamily: 'Times New Roman', fontWeight:'bold', fontSize:'30px'}}>Honors</h4>
+                        <p> The standard Lorem Ipsum passage, used since the 1500s
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
                     </div>
 
                 </div>
+           
             </div> 
     );
 }

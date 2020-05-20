@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route , Switch} from 'react-router-dom'
+import { Route , Switch, Router} from 'react-router-dom'
 import Homepage from './Homepage'
 import Resume from './Resume'
 import Project from './Projects'
@@ -7,6 +7,7 @@ import Profile from './Profile'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 import Test from './Test'
+import Users from './Users'
 
 
 
@@ -23,6 +24,7 @@ const RoutingPage = () => {
             <Route path ="/signin" component={SignIn} />
             <Route path ="/signup" component={SignUp} />
             <Route path ="/test" component={Test} />
+            <Route path ="/users" component={Users} />
            
         
         </Switch>

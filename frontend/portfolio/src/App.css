@@ -192,4 +192,18 @@
     background-image: url(https://i.imgur.com/yhDgaDg.jpg); 
 }
 
+/* users */
 
+.user{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+}
+
+.card{
+    background-color: chartreuse;
+    border:2px solid black;
+    margin: 10px; 
+    flex-basis: 300px;
+}
