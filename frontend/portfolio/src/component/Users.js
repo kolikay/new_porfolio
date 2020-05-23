@@ -10,7 +10,7 @@ class Homepage extends Component {
         super(props);
         this.state = { 
             loading : false,
-            posts : [],
+            users : [],
             error : '',
            
          }
@@ -23,7 +23,7 @@ class Homepage extends Component {
         .then( responce => {console.log(responce.data)
         this.setState({ 
             loading : false,
-            posts: responce.data})
+            users: responce.data})
         
         
         })
@@ -34,7 +34,7 @@ class Homepage extends Component {
         
 
     render() { 
-        const { posts, loading, error} = this.state
+        const { users, loading, error} = this.state
         const text = loading && !error ? <p>Please wait while file is loaded from the server.......</p>: null
         
         return (
@@ -47,18 +47,19 @@ class Homepage extends Component {
                         <div className='col user' >
 
 
-                            {posts ? posts.map(post => 
+                            {users ? users.map(user => 
                             
-                            <Card className='card' key={post.id} shadow={5}>
-                                <CardTitle>{ post.username}</CardTitle>
+                            <Card className='card' key={user.id} shadow={5}>
+                                <CardTitle><img src={user.image} style={{ width:"100px", height:'100px'}}/>{user.username}</CardTitle>
                                 <CardText>
-                                    {post.name}
-                                    {post.email}
-                                    {post.address}
-                                    {post.phone}
+                                    {user.name}
+                                    {user.email}
+                                    {user.address}
+                                    {user.phone}
+                                    {user.email}
                                 </CardText>
                                 <CardActions border>
-                                    <img src={post.image} width='50px'/>
+                                     
                                 </CardActions>  
                             </Card>)
                             :null}

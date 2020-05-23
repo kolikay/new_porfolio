@@ -117,13 +117,13 @@ export default class SignUp extends Component {
                 </div>
 
                 <div className="form-group">
-                    <label>About Me</label>
+                    <label>about</label>
                     <textarea
                      name = 'about'
                      value = {about}
                      onChange = {this.changeHandler} 
                     className="form-control" 
-                    placeholder="About "> 
+                    placeholder="about "> 
                     </textarea>
                 </div>
 
@@ -160,7 +160,7 @@ export default class SignUp extends Component {
                 </div>
 
                 <button 
-                style={{backgroundColor: '#6DD5FA'}}
+                style={{backgroundColor: 'rgb(255, 233, 110)'}}
                 type="submit" 
                 className="btn btn-block">
                 Sign Up

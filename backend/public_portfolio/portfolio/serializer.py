@@ -41,7 +41,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         email=validated_data.get('email'),
         name = validated_data.get('name'),
         address = validated_data.get('address'),
-        About_me = validated_data.get('About_me'),
+        about = validated_data.get('about'),
         phone = validated_data.get('phone'),
         age = validated_data.get('age'))
         new_user.save()

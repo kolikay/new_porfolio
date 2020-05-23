@@ -6,7 +6,7 @@ class UserProfile(models.Model):
     email       = models.EmailField(unique=True)
     phone       = models.CharField(max_length=11)
     address     = models.CharField(max_length=200)
-    about    = models.TextField()
+    about       = models.TextField()
     date_added  = models.DateTimeField(auto_now_add=True)
     username    = models.CharField(max_length=122, blank=False)
     image       = models.ImageField(upload_to='users-pix/', null=True, blank=True) 
