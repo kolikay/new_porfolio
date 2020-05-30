@@ -9,7 +9,6 @@ import SignUp from './SignUp'
 import Test from './Test'
 import Users from './Users'
 
-import LoginContainer from './LoginContainer'
 
 
 
@@ -23,7 +22,6 @@ const RoutingPage = () => {
             <Route exact path ="/project" component={Project}/>
             <Route path ="/resume" component={Resume} />
             <Route path ="/profile" component={Profile} />
-            {/* <Route path ="/signin" render={()=> <LoginContainer user={this.props.user} /> }/> */}
             <Route path ="/signup" component={SignUp} />
             <Route path ="/signin" component={SignIn} />
             <Route path ="/test" component={Test} />

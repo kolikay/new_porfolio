@@ -6,6 +6,9 @@ import axios from 'axios'
 export default class SignUp extends Component {
     constructor(props){
         super(props)
+        this.changeHandler = this.changeHandler.bind(this)
+        this.submitHandler = this.submitHandler.bind(this)
+
         this.state = {
             name : '',
             age  : '',
@@ -17,7 +20,7 @@ export default class SignUp extends Component {
             password : '',
             password2 : '',
             error: '' ,
-            status: '',
+            
         }
     }
     changeHandler = (e) => {
@@ -25,16 +28,16 @@ export default class SignUp extends Component {
     }
     submitHandler = e => {
         e.preventDefault()
-        console.log(this.state)
         axios.post('http://127.0.0.1:8000/signup/', this.state)
-        .then(response => {
-            console.log(response)
-            this.setState({ status: response.status})
-            
+        .then(responce=> {
+            if(responce.status===201){
+                window.location = "/"
+            }else {
+                window.location = "signUp"
+            }
         })
        
         .catch(error => {
-            console.log(error)
             this.setState({
                 error : <p>Registration Failed</p>
             })
@@ -47,14 +50,14 @@ export default class SignUp extends Component {
     render() {
      
        
-        const {error, status, name, age, email, phone, address, about, username, password, password2} = this.state
-        console.log(status)
+        const {error, name, age, email, phone, address, about, username, password, password2} = this.state
+        
 
 
         return (
             <div className='container container-fluid'>
                 <h4>{error}</h4>
-                <h4>{status === 201 ? <h4>Registration was successful</h4>: null}</h4>
+                
                 
                     
              

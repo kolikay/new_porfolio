@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
-
 
 export default class Signin extends Component {
         constructor(props){
@@ -25,24 +23,16 @@ export default class Signin extends Component {
         handleSubmit = e => {
         e.preventDefault();
         axios.post('http://127.0.0.1:8000/signin/', this.state)
-            .then(function (responce){
+            .then(responce=> {
                 if(responce.status===200){
                     window.location = "/"
-                }else if (responce.status !== 200){
+                }else {
                     window.location = "signin"
                 }
             })
-
-
-
-        // .then(response => {
-        //     console.log(response.status);
-           
-        // })
-       
-        .catch(error => {
-            alert(error.message)
-    })
+            .catch(
+                alert('Invalid Login Details Provided')
+            )
   
 }
 
