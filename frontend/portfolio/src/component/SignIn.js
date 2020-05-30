@@ -11,6 +11,7 @@ export default class Signin extends Component {
             this.state = {
                 username : '',
                 password : '',
+                error: '',
             }
         }
         
@@ -25,13 +26,18 @@ export default class Signin extends Component {
         axios.post('http://127.0.0.1:8000/signin/', this.state)
             .then(responce=> {
                 if(responce.status===200){
-                    window.location = "/"
+                    window.location = "/" 
                 }else {
                     window.location = "signin"
                 }
             })
-            .catch(
-                alert('Invalid Login Details Provided')
+            .catch( error => {
+                // alert('Invalid Login Details Provided')
+                this.setState({
+                    error: <p>Login Detail provided is invalid</p>
+                })
+            }
+                
             )
   
 }
@@ -51,6 +57,7 @@ export default class Signin extends Component {
 
                     <form style={{paddingTop:'35%', width: '70%'}} onSubmit={this.handleSubmit}>
                 <h3>Sign In</h3>
+                {this.state.error}
 
                 <div className="form-group">
                     <label>Username</label>
