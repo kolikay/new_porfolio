@@ -62,14 +62,14 @@ export default class SignUp extends Component {
                 <h3>Sign Up</h3>
 
                 <div className="form-group">
-                    <label>Full Name</label>
+                    <label>Name</label>
                     <input 
                     name = 'name'
                     value = {name}
                     onChange = {this.changeHandler}
                     type="text" 
                     className="form-control" 
-                    placeholder="Full Name" />
+                    placeholder="Name" />
                 </div>
 
                 <div className="form-group">

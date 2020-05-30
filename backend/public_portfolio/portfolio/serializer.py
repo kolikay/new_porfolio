@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from portfolio.models import UserProfile, Resume
 from django.contrib.auth import get_user_model, login, authenticate
+from django.shortcuts import  redirect
 
 
 
