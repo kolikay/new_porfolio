@@ -17,7 +17,7 @@ class UserDetails extends Component {
 
     
     componentDidMount() {
-      
+        console.log(this.props.match)
         this.setState({loading : true})
         axios.get(`http://127.0.0.1:8000/users/${this.props.match.params.id}`)
         
@@ -42,7 +42,7 @@ class UserDetails extends Component {
                                 <div className='row'>
                                             <div className='col profile-top'>
                                                 <h1  style={{ margin:'0px',fontFamily: 'cursive'}}>{user.name}</h1>
-                                                    <h4 style={{color:'white', marginTop:'0px',fontFamily: 'cursive'}}>Full Stack Web Developer</h4>
+                                                <h4 style={{color:'white', marginTop:'0px',fontFamily: 'cursive'}}>{user.stack}</h4>
                                             </div>
                                 </div>
                                 <div className='row container' style={{paddingTop:'10%'}}>

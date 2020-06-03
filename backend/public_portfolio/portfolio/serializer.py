@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from portfolio.models import UserProfile, Resume
+from portfolio.models import UserProfile
 from django.contrib.auth import get_user_model, login, authenticate
 from django.shortcuts import  redirect
 
@@ -50,24 +50,10 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 
 
-class ResumeSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Resume
-        fields = ('__all__')
-
-
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = ('__all__')
-
-
-
-
-# class LoginSerializer(serializers.ModelSerializer):
-#     username          = forms.CharField()
-#     password          = forms.CharField(widget=forms.PasswordInput)
 
 
     

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import UserProfile, Resume
-from .serializer import UserRegistrationSerializer, ResumeSerializer, UserProfileSerializer
+from .models import UserProfile
+from .serializer import UserRegistrationSerializer, UserProfileSerializer
 from rest_framework import viewsets, generics, permissions
 from portfolio.forms import LoginForm, SignUpForm
 from django.contrib.auth import authenticate,  get_user_model, logout
@@ -34,10 +34,7 @@ class RegisterApiView(generics.CreateAPIView):
     permission_classes  = [permissions.AllowAny]
 
 
-#Handles resumes inputs into the database
-class ResumeViewSet(viewsets.ModelViewSet):
-    serializer_class = ResumeSerializer
-    queryset = Resume.objects.all()
+
 
 
 #Api for logging users in

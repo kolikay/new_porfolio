@@ -40,7 +40,7 @@ class Homepage extends Component {
         const text = loading && !error ? <p>Please wait while file is loaded from the server.......</p>: null
         
         return (
-            <div className='container'>
+            <div className='container '>
                     <h3>{text}</h3>
 
 
@@ -51,26 +51,22 @@ class Homepage extends Component {
 
                             {users ? users.map(user => 
                             
-                            <Card className='card' key={user.id} shadow={5}>
-                                <Link to={`/users/${user.id}`}>
-                                    <CardTitle><img src={user.image} style={{ width:"100px", height:'100px'}}/>{user.username}</CardTitle>
-                                    
+                            <Card className='card' key={user.id} shadow={1}>
+                                 <Link to={`/users/${user.id}`}>
+                                    <CardTitle><img src={user.image} style={{ width:"150px", height:'150px'}}/></CardTitle>
+                                 </Link> 
                                     <CardText>
-                                        {user.name}
-                                        {user.email}
-                                        {user.address}
-                                        {user.phone}
-                                        {user.email}
+                                        <h4>{user.username}</h4>
+                                        <h5>{user.stack}</h5>
+                                       
                                     </CardText>
-                                    <CardActions border>
-                                        
-                                    </CardActions> 
-                                </Link> 
+                                   
+                                
                             </Card>)
                             :null}
                         </div>
                     </div>
-                    {/* {posts ? posts.map(post => <ul key={post.id}><b>username</b> {  post.username}  <b>fullname</b> {  post.name} {post.title} </ul>):null} */}
+                   
 
                     <p>{error}</p>
             </div>);

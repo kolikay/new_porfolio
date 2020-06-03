@@ -20,6 +20,7 @@ export default class SignUp extends Component {
             password : '',
             password2 : '',
             error: '' ,
+            stack: '',
             
         }
     }
@@ -50,7 +51,7 @@ export default class SignUp extends Component {
     render() {
      
        
-        const {error, name, age, email, phone, address, about, username, password, password2} = this.state
+        const {stack, error, name, age, email, phone, address, about, username, password, password2} = this.state
         
 
 
@@ -84,6 +85,17 @@ export default class SignUp extends Component {
                     type="text" 
                     className="form-control" 
                     placeholder="Last name" />
+                </div>
+
+                <div className="form-group">
+                    <label>Stack</label>
+                    <input 
+                     name = 'stack'
+                     value = {stack}
+                     onChange = {this.changeHandler}
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Stack" />
                 </div>
 
                 <div className="form-group">

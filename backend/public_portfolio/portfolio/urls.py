@@ -2,7 +2,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-from .views import ResumeViewSet, RegisterApiView, UserViewSet, index
+from .views import RegisterApiView, UserViewSet, index
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
 
@@ -11,7 +11,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('users', UserViewSet, basename='user')
-router.register('resume', ResumeViewSet, basename='resume')
+
 
 
 urlpatterns = [
