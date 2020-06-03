@@ -32,7 +32,6 @@ export default class Signin extends Component {
                 }
             })
             .catch( error => {
-                // alert('Invalid Login Details Provided')
                 this.setState({
                     error: <p>Login Detail provided is invalid</p>
                 })

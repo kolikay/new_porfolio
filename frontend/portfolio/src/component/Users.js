@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import '../App.css';
 import {Card, CardTitle, CardActions, Button, CardMenu, IconButton, CardText} from 'react-mdl'
+import { Link } from 'react-router-dom'
 
 
 
@@ -51,17 +52,20 @@ class Homepage extends Component {
                             {users ? users.map(user => 
                             
                             <Card className='card' key={user.id} shadow={5}>
-                                <CardTitle><img src={user.image} style={{ width:"100px", height:'100px'}}/>{user.username}</CardTitle>
-                                <CardText>
-                                    {user.name}
-                                    {user.email}
-                                    {user.address}
-                                    {user.phone}
-                                    {user.email}
-                                </CardText>
-                                <CardActions border>
-                                     
-                                </CardActions>  
+                                <Link to={`/users/${user.id}`}>
+                                    <CardTitle><img src={user.image} style={{ width:"100px", height:'100px'}}/>{user.username}</CardTitle>
+                                    
+                                    <CardText>
+                                        {user.name}
+                                        {user.email}
+                                        {user.address}
+                                        {user.phone}
+                                        {user.email}
+                                    </CardText>
+                                    <CardActions border>
+                                        
+                                    </CardActions> 
+                                </Link> 
                             </Card>)
                             :null}
                         </div>
