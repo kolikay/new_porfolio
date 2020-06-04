@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import UserProfile
-from .serializer import UserRegistrationSerializer, UserProfileSerializer, ProfileSerializer
+from .serializer import UserRegistrationSerializer, UserProfileSerializer
 from rest_framework import viewsets, generics, permissions
 from portfolio.forms import LoginForm, SignUpForm
 from django.contrib.auth import authenticate,  get_user_model, logout
@@ -49,7 +49,7 @@ class RegisterApiView(generics.CreateAPIView):
 class ProfileAPI(APIView):
     def get(self, request, *args, **kwargs):
         user = get_object_or_404(UserProfile, username=kwargs['username'])
-        profile_serializer = ProfileSerializer(user)
+        profile_serializer = UserProfileSerializer(user)
         return Response(profile_serializer.data)
 
 
