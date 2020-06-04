@@ -115,8 +115,9 @@ users{
 }
 
 .card{
-    background-color: rgb(248, 226, 101);
+    background-color: rgb(255, 255, 255);
     border:0px ;
     margin: 20px; 
     flex-basis: 300px;
+    font-family: 'Times New Roman', Times, serif;
 }

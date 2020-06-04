@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route , Switch, BrowserRouter as Router} from 'react-router-dom';
 import Homepage from './Homepage'
-import Resume from './Resume'
 import Project from './Projects'
 import Profile from './Profile'
 import SignIn from './SignIn'
@@ -21,7 +20,6 @@ const RoutingPage = () => {
             <Switch>
                 <Route exact path ="/" component={Homepage}/>
                 <Route exact path ="/project" component={Project}/>
-                <Route path ="/resume" component={Resume} />
                 <Route path ="/profile" component={Profile} />
                 <Route path ="/signup" component={SignUp} />
                 <Route path ="/signin" component={SignIn} />

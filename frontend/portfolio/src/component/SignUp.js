@@ -57,12 +57,8 @@ export default class SignUp extends Component {
 
         return (
             <div className='container container-fluid'>
-                <h4>{error}</h4>
                 
-                
-                    
-             
-            <form style={{paddingTop:'7%'}} onSubmit = {this.submitHandler}>
+             <form style={{paddingTop:'7%'}} onSubmit = {this.submitHandler}>
                 <h3>Sign Up</h3>
 
                 <div className="form-group">
@@ -180,6 +176,7 @@ export default class SignUp extends Component {
                 className="btn btn-block">
                 Sign Up
                 </button>
+                <h2>{error}</h2>
 
                 <p className="forgot-password text-right">
                     Already registered {<Link style={{textDecoration: 'none', color:'black'}} to='/signin'>Sign IN</Link>}

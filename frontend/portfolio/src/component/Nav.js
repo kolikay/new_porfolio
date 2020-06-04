@@ -31,10 +31,6 @@ const Nav = () => {
               </li>
 
               <li className="nav- mr-4">
-                {<Link className="nav-link"  to='/resume'style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Resume</Link>}
-              </li>
-
-              <li className="nav- mr-4">
                 {<Link className="nav-link"  to='/project' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Project</Link>}
               </li>
               <li>
@@ -42,7 +38,7 @@ const Nav = () => {
               </li>
 
                 <li className="nav- mr-3 dropdown">
-                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>
+                <a className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>
                   User
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">

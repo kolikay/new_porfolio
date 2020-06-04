@@ -32,7 +32,7 @@ class Homepage extends Component {
         .catch(error => {console.log(error)
         this.setState({error : <h4>server timed out while loading</h4>})
         })
-        }
+    }
         
 
     render() { 
@@ -56,8 +56,9 @@ class Homepage extends Component {
                                     <CardTitle><img src={user.image} style={{ width:"150px", height:'150px'}}/></CardTitle>
                                  </Link> 
                                     <CardText>
-                                        <h4>{user.username}</h4>
-                                        <h5>{user.stack}</h5>
+                                        <h2 style={{color:'rgb(226, 197, 29)', fontFamily:'cursive'}}>{user.username}</h2>
+                                        <h5 style={{color:'black',fontWeight:'bold', fontFamily:'cursive'}}>{user.stack}</h5>
+                                        <a style={{textDecoration:'none', color:'black',fontWeight:'bold', fontFamily:'cursive'  }} href={user.resume} target='_blank'>Resume</a>
                                        
                                     </CardText>
                                    
