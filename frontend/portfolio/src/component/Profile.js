@@ -1,5 +1,5 @@
 import React from 'react';
-import {ProgressBar} from'react-mdl'
+
 
 const Profile = () => {
     return ( 

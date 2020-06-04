@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import UserProfile
-from .serializer import UserRegistrationSerializer, UserProfileSerializer
+from .serializer import UserRegistrationSerializer, UserProfileSerializer, ProfileSerializer
 from rest_framework import viewsets, generics, permissions
 from portfolio.forms import LoginForm, SignUpForm
 from django.contrib.auth import authenticate,  get_user_model, logout
 from .models import UserProfile
 from django import forms
 from rest_framework.response import Response
-from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import View
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+
 
 
 
@@ -27,6 +30,7 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes  = [permissions.AllowAny]
 
 
+
 #Handles signing up of users
 class RegisterApiView(generics.CreateAPIView):
     queryset            = UserProfile.objects.all()
@@ -34,6 +38,42 @@ class RegisterApiView(generics.CreateAPIView):
     permission_classes  = [permissions.AllowAny]
 
 
+
+# class ProfileAPI(viewsets.ModelViewSet):
+#     serializer_class = ProfileSerializer
+
+#     def get_queryset(self):
+#         return UserProfile.objects.filter(pk=self.kwargs['user_id'])
+
+
+class ProfileAPI(APIView):
+    def get(self, request, *args, **kwargs):
+        user = get_object_or_404(UserProfile, username=kwargs['username'])
+        profile_serializer = ProfileSerializer(user)
+        return Response(profile_serializer.data)
+
+
+
+
+
+
+
+
+
+
+
+
+# def Profile(request):
+#     users = UserProfile.objects.all()
+#     for user in users:
+#         print(request.user)
+#         if user == request.user:
+#             return user
+#             print('correct')
+#         else:
+#             return HttpResponse("w")
+
+#     return HttpResponse("working")
 
 
 

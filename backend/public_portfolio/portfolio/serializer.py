@@ -44,7 +44,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         address = validated_data.get('address'),
         about = validated_data.get('about'),
         phone = validated_data.get('phone'),
-        age = validated_data.get('age'))
+        age = validated_data.get('age'),
+        stack = validated_data.get('stack'))
         new_user.save()
         return new_user
 
@@ -54,6 +55,16 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = ('__all__')
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ('__all__')
+
+
+
+
 
 
     
