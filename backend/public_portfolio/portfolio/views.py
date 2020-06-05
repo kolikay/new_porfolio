@@ -37,13 +37,7 @@ class RegisterApiView(generics.CreateAPIView):
     serializer_class    = UserRegistrationSerializer
     permission_classes  = [permissions.AllowAny]
 
-
-
-# class ProfileAPI(viewsets.ModelViewSet):
-#     serializer_class = ProfileSerializer
-
-#     def get_queryset(self):
-#         return UserProfile.objects.filter(pk=self.kwargs['user_id'])
+    
 
 
 class ProfileAPI(APIView):
@@ -51,14 +45,6 @@ class ProfileAPI(APIView):
         user = get_object_or_404(UserProfile, username=kwargs['username'])
         profile_serializer = UserProfileSerializer(user)
         return Response(profile_serializer.data)
-
-
-
-
-
-
-
-
 
 
 
@@ -76,22 +62,6 @@ class ProfileAPI(APIView):
 #     return HttpResponse("working")
 
 
-
-#Api for logging users in
-
-# def login_page(request):
-#     login_form = LoginForm(request.POST or None)
-#     context = {'login_form': login_form}
-#     if login_form.is_valid():
-#         username = login_form.cleaned_data.get('username')
-#         password = login_form.cleaned_data.get('password')
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect ('/')
-#         else:
-#             return HttpResponse("Invalid Login details provided")
-#     return render(request, 'portfolio/login_form.html', context)
 
 
 

@@ -11,7 +11,6 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('users', UserViewSet, basename='user')
-# router.register('api/users/(?P<user_id>/$)', ProfileAPI, basename='profile_api')
 
 
 
