@@ -25,12 +25,12 @@ const RoutingPage = () => {
                 <Route path ="/signup" component={SignUp} />
                 <Route path ="/signin" component={SignIn} />
                 <Route path ="/test" component={Test} />
+                <Route exact path ="/auth" component={Protected} />
                 <Authenticated>
                 <Route exact path ="/project" component={Project}/>
                 <Route  exact path ="/profile" component={Profile} />
                 <Route exact path ="/users" component={Users} />
                 <Route path = '/users/:id' component={UserDetails}/>
-                <Route exact path ="/protected" component={Protected} />
                 </Authenticated>
             
             

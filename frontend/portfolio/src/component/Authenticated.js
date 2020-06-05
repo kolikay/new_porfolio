@@ -18,13 +18,13 @@ class Authenticated extends Component {
     componentDidMount(){
         const jwt = Helpers()
         if(!jwt){
-            this.props.history.push('/signin')
+            this.props.history.push('/auth')
         }
         axios.get('http://127.0.0.1:8000/users/', {headers: {Authorization: `Bearer ${jwt}`}}).then(res => this.setState({
             user: res.data 
         })).catch(err => {
             localStorage.removeItem('JWT');
-            this.props.history.push('/signin')
+            this.props.history.push('/auth')
         })}
     render() { 
         if(this.state.user === undefined){
