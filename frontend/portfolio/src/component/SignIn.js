@@ -27,7 +27,11 @@ export default class Signin extends Component {
         .then(res => {
             localStorage.setItem('JWT', res.data.token);
             this.props.history.push('/')
-            });
+            }).catch( error => {
+                this.setState({
+                    error: <p>Login Detail provided is invalid</p>
+                })
+            })
         }
 
       
@@ -105,8 +109,12 @@ export default class Signin extends Component {
 //                 window.location = "signin"
 //             }
 //         })
+
+
+
 //         .catch( error => {
 //             this.setState({
 //                 error: <p>Login Detail provided is invalid</p>
 //             })
 //         })
+// }
