@@ -15,6 +15,7 @@ class UserProfile(models.Model):
     image       = models.ImageField(upload_to='users-pix/', null=True, blank=True) 
     resume      = models.FileField(upload_to='resume/', null=True, blank=True) 
     
+    
 
     def __str__(self):
         return self.name 

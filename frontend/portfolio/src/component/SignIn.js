@@ -18,28 +18,17 @@ export default class Signin extends Component {
 
 
         changeHandler = e => {
-            
-            this.setState({ [e.target.name] : e.target.value })
+        this.setState({ [e.target.name] : e.target.value })
         }
+
         handleSubmit = e => {
         e.preventDefault();
         axios.post('http://127.0.0.1:8000/signin/', this.state)
-            .then(responce=> {
-                if(responce.status===200){
-                    window.location = "/" 
-                }else {
-                    window.location = "signin"
-                }
-            })
-            .catch( error => {
-                this.setState({
-                    error: <p>Login Detail provided is invalid</p>
-                })
-            }
-                
-            )
-  
-}
+        .then(res => {
+            localStorage.setItem('JWT', res.data.token);
+            this.props.history.push('/')
+            });
+        }
 
       
 
@@ -106,3 +95,18 @@ export default class Signin extends Component {
     }
 }
 
+// handleSubmit = e => {
+//     e.preventDefault();
+//     axios.post('http://127.0.0.1:8000/signin/', this.state)
+//         .then(responce=> {
+//             if(responce.status===200){
+//                 window.location = "/" 
+//             }else {
+//                 window.location = "signin"
+//             }
+//         })
+//         .catch( error => {
+//             this.setState({
+//                 error: <p>Login Detail provided is invalid</p>
+//             })
+//         })

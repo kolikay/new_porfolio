@@ -41,10 +41,17 @@ class RegisterApiView(generics.CreateAPIView):
 
 
 class ProfileAPI(APIView):
+    permission_classes  = [permissions.AllowAny]
+    
     def get(self, request, *args, **kwargs):
         user = get_object_or_404(UserProfile, username=kwargs['username'])
         profile_serializer = UserProfileSerializer(user)
-        return Response(profile_serializer.data)
+        print(request.user.username, user.username)
+        print('hello')
+        if request.user.username == user.username:
+            return Response(profile_serializer.data)
+        else:
+            return HttpResponse('On-authorised User')
 
 
 

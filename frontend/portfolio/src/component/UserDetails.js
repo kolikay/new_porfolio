@@ -21,6 +21,7 @@ class UserDetails extends Component {
         this.setState({loading : true})
         axios.get(`http://127.0.0.1:8000/users/${this.props.match.params.id}`)
         
+        
         .then( responce => {
         this.setState({ 
             loading : false,
