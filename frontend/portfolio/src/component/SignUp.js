@@ -206,7 +206,7 @@ function SignUp () {
             password : '',
             password2 : '',
             stack: '',
-            error: ''
+            error:  ''
             
         },
         onSubmit: values => {
@@ -214,15 +214,14 @@ function SignUp () {
                     axios.post('http://127.0.0.1:8000/signup/', values)
                     .then(responce=> {console.log(responce)
                         if(responce.status===201){
-                            window.location = "/"
-                        }else {
-                            window.location = "signUp"
+                            alert('Registration was Successful, Signin to continue')
+                            window.location = "/signin"
                         }
                     })
-                   
-                    .catch(error => {
-                        error = <p>Registration Failed</p>
-                        alert(error.props.children)
+                   .catch(error => {
+                    error = <p>Registration Failed</p>
+                    alert(error.props.children)
+                    window.location = '/signup'
                     })
         },
         validate: values => {
@@ -407,10 +406,26 @@ function SignUp () {
             className="btn btn-block">
             Sign Up
             </button>
-            
+           
             
         </form>
     </div>
     )}
 
 export default SignUp
+
+
+
+
+// .then(responce=> {console.log(responce)
+//     if(responce.status===201){
+//         window.location = "/"
+//     }else {
+//         window.location = "signUp"
+//     }
+// })
+// .catch(error => {
+//     error : <p>Registration Failed</p>
+//     alert(error.props.children)
+//    
+// })
