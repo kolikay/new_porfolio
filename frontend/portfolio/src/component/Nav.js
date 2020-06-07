@@ -1,20 +1,16 @@
 import React, { Fragment , Component} from 'react';
 import { Link } from 'react-router-dom'
 import '../App.css';
-import axios from 'axios'
 
 
 
-const Nav = () => {
+
+export default class Nav extends Component {
+
+  render(){
+
+  return ( 
   
-
-    return ( 
-
-
-
-
-
-    
 <Fragment>
   <nav className="navbar navbar-expand-lg mb-0 navbar-dark bg-dark" >
           <Link className="navbar-brand" to="/" style={{fontSize:'1.5em', color: 'white', fontFamily: 'Courier New Courier monospace'}}>Kolikay</Link>
@@ -34,7 +30,7 @@ const Nav = () => {
                 
               </li>
               <li className="nav-item mr-4  ">
-                 {/* {this.state.user ? this.state.user.map(user => <Link className="nav-link" to={`/profiles/${user.username}`}style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Profile</Link>) : null} */}
+                
                  { <Link className="nav-link" to={`/profile`}style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Profile</Link>}
               </li>
 
@@ -55,7 +51,8 @@ const Nav = () => {
                  
                   
                   <div className="dropdown-divider"></div>
-                  {<Link className="dropdown- mr-2"  style={{textDecoration: 'none', color:'black'}} to='/project'>Signout</Link>}
+                  {<Link className="dropdown- mr-2"  style={{textDecoration: 'none', color:'black'}} onClick={this.props.onDelete}>Signout</Link>}
+                  
                 </div>
                 
               </li>
@@ -68,48 +65,13 @@ const Nav = () => {
           </nav>
 
         </Fragment>
-     );
+     )}
 }
  
-export default Nav;
 
 
 
 
-
-// class Nav extends Component {
-//   constructor(props) {
-//       super(props);
-//       this.state = { 
-//           loading : false,
-//           user : [],
-//           error : '',
-         
-//        }
-//   }
-  
-
-  
-//   componentDidMount() {
-//       console.log(this.props.match)
-//       this.setState({loading : true})
-//       axios.get(`http://127.0.0.1:8000/users/`)
-      
-//       .then( responce => {console.log(responce.data)
-//       this.setState({  
-//           loading : false,
-//           user: responce.data})
-         
-      
-      
-//       })
-//       .catch(error => {console.log(error)
-//       this.setState({error : <h4>server timed out while loading</h4>})
-//       })
-      
-
-//   }
-//   render(){
 
 
 

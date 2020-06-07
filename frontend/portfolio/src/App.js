@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
@@ -7,14 +7,23 @@ import RoutingPage from './component/RoutingPage';
 import Footer from './component/Footer';
 
 
-const App = () => {
-  return (   
-  <div >
-    <Nav />
+class App extends Component {
+
+  handleLogout =  () => {
+    localStorage.clear();
+    window.location = "/signin"
+  }
+    
+  render(){
+
+  return ( <div >
+    <Nav onDelete = {this.handleLogout}/>
     <RoutingPage />
     <Footer />
   
-  </div> );
+  </div> )
+
+  }
 }
  
 export default App;

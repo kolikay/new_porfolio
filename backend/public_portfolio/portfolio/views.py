@@ -26,7 +26,7 @@ class UserViewSet(viewsets.ModelViewSet):
     A viewset for viewing and editing user instances.
     """
     serializer_class = UserProfileSerializer
-    queryset = UserProfile.objects.all()
+    queryset = UserProfile.objects.all().order_by('-date_added')
     permission_classes  = [permissions.AllowAny]
 
 
