@@ -52,7 +52,8 @@ export default class Signin extends Component {
 
         .then(res => {console.log(res)
             localStorage.setItem('JWT', res.data.token);
-            this.props.history.push('/')
+            window.location = '/'
+            // this.props.history.push('/')
             }).catch( error => {
                 this.setState({
                     error: <p>Login Detail provided is invalid</p>

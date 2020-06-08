@@ -54,7 +54,7 @@ class Homepage extends Component {
                             <Card className='card' key={user.id} shadow={1}>
                                  <Link to={`/users/${user.id}`}>
                                  
-                                    <CardTitle><img src={user.image} style={{ width:"150px", height:'150px'}} alt='icon' /></CardTitle>
+                                    <CardTitle><img src={user.image} style={{ width:"150px", height:'150px'}} alt={user.username} /></CardTitle>
                                  </Link> 
                                     <CardText>
                                         <h2 style={{color:'rgb(226, 197, 29)', fontFamily:'cursive'}}>{user.username}</h2>

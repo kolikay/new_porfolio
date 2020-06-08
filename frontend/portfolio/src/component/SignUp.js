@@ -2,7 +2,7 @@
 import React from 'react';
 import { useFormik } from 'formik'
 import axios from 'axios'
-import Helpers from './Helpers'
+import GetToken from './GetToken'
 
 
 
@@ -13,7 +13,7 @@ import Helpers from './Helpers'
 
 function SignUp () {
     
-    const token = Helpers()
+    const token = GetToken()
     const url = 'http://127.0.0.1:8000/signup/'
     const formik = useFormik({
         initialValues: {

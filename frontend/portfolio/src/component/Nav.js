@@ -1,8 +1,11 @@
 import React, { Fragment , Component} from 'react';
 import { Link } from 'react-router-dom'
 import '../App.css';
+import GetToken from './GetToken'
 
 
+
+const getToken = GetToken()
 
 
 export default class Nav extends Component {
@@ -37,27 +40,62 @@ export default class Nav extends Component {
               <li className="nav- mr-4">
                 {<Link className="nav-link"  to='/project' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Project</Link>}
               </li>
-              <li>
-              {<Link className="nav-link"  to='/signup' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Register</Link>}
-              </li>
 
-                <li className="nav- mr-3 dropdown">
-                <a href='/' className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>
-                  User
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-  
-                  {<Link className="dropdown- mr-2" style={{color:'black'}} to='/signin'>Sign In</Link>}
-                 
-                  
-                  <div className="dropdown-divider"></div>
-                  {<Link className="dropdown- mr-2" to='#'  style={{textDecoration: 'none', color:'black'}} onClick={this.props.onDelete}>Signout</Link>}
-                  
-                </div>
+              { ! getToken ?
+
+              <li>
                 
+              {<Link className="nav-link"  to='/signup' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Register</Link>}
+              </li> 
+              
+              : null }
+
+              <li className="nav- mr-4">
+
+              {  getToken ?
+
+              
+              <Link className="nav-link" to='#'  style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}} onClick={this.props.onDelete}>Signout</Link>
+              
+              :
+              
+              <Link className="nav-link" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}} to='/signin'>Sign In</Link>
+              }
               </li>
             
-            </ul>
+             
+
+
+
+
+                              {/* <li className="nav- mr-3 dropdown">
+                                <a href='/' className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>
+                                  User
+                                </a>
+
+                                
+
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                { ! getToken ?
+                  
+                                  <Link className="dropdown- mr-2" style={{color:'black'}} to='/signin'>Sign In</Link>
+                                
+                                : null }
+
+                                  
+
+                                  { getToken ?
+
+                                  <Link className="dropdown- mr-2" to='#'  style={{textDecoration: 'none', color:'black'}} onClick={this.props.onDelete}>Signout</Link>
+                                  
+                                  : null }
+
+                                </div>
+                                
+                              </li> */}
+                    
+          </ul>
           
         
           </div>
