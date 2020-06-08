@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom'
-import Helpers from './GetToken'
+import GetToken from './Helpers/GetToken'
 
 
 
@@ -14,7 +14,7 @@ class Authenticated extends Component {
          }
     }
     componentDidMount(){
-        const jwt = Helpers()
+        const jwt = GetToken()
         if(!jwt){
             this.props.history.push('/auth')
         }

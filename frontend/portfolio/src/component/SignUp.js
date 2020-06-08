@@ -2,7 +2,7 @@
 import React from 'react';
 import { useFormik } from 'formik'
 import axios from 'axios'
-import GetToken from './GetToken'
+import GetToken from './Helpers/GetToken'
 
 
 

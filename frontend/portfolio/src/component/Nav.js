@@ -1,7 +1,7 @@
 import React, { Fragment , Component} from 'react';
 import { Link } from 'react-router-dom'
 import '../App.css';
-import GetToken from './GetToken'
+import GetToken from './Helpers/GetToken'
 
 
 
@@ -55,7 +55,7 @@ export default class Nav extends Component {
               {  getToken ?
 
               
-              <Link className="nav-link" to='#'  style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}} onClick={this.props.onDelete}>Signout</Link>
+              <Link className="nav-link" to='#'  style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}} onClick={this.props.onDelete}>Sign Out</Link>
               
               :
               

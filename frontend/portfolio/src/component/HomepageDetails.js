@@ -23,7 +23,7 @@ const HomepageDetail = () => {
                         (commonly referred to as coding).</p>
                 </div>
                 <div className='col-sm-12 col-md-3 ' style={{paddingTop:'100px', paddingRight:'50px'}}>
-                <i class="fa fa-desktop" aria-hidden="true" style={{color:'rgb(226, 197, 29)', fontSize:'40px'}}></i>
+                <i className="fa fa-desktop" aria-hidden="true" style={{color:'rgb(226, 197, 29)', fontSize:'40px'}}></i>
                     <h4 > Web App Development</h4>
                     <p>A web developer or programmer is someone who takes a web design – 
                         which has been created by either a client or a design team – 

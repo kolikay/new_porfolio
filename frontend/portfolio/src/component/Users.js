@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../App.css';
 import {Card, CardTitle,  CardText} from 'react-mdl'
 import { Link } from 'react-router-dom'
+import GetUser from './Helpers/GetUser'
 
 
 
@@ -23,6 +24,8 @@ class Homepage extends Component {
         this.setState({loading : true})
         axios.get('http://127.0.0.1:8000/users/')
         .then( responce => {console.log(responce.data)
+        const getUser = GetUser()
+        console.log(getUser)
         this.setState({ 
             loading : false,
             users: responce.data})

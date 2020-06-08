@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import Helpers from './Helpers'
 
 
 
-// const token = Helpers()
+
 const url = 'http://127.0.0.1:8000/signin/'
 
 
@@ -30,16 +29,7 @@ export default class Signin extends Component {
 
         handleSubmit = e => {
         e.preventDefault();
-        // axios.post('http://127.0.0.1:8000/signin/', this.state )
-
-        // axios.post(url, this.state, {
-        //     headers: {
-        //         'Authorization': token,
-        //         'Accept' : 'application/json',
-        //         'Content-Type': 'application/json'
-        //     }
-        
-        // })
+      
         axios.post(url, this.state, {
             headers: {
                 Authorization: `JWT ${localStorage.getItem('token')}`
@@ -47,11 +37,9 @@ export default class Signin extends Component {
         
         })
      
-
-
-
         .then(res => {console.log(res)
             localStorage.setItem('JWT', res.data.token);
+            localStorage.setItem('username', this.state.username);
             window.location = '/'
             // this.props.history.push('/')
             }).catch( error => {
@@ -69,8 +57,7 @@ export default class Signin extends Component {
         return (
             <div className='container container-fluid'>
                 <div className='row'>
-                    <div className='col-4'>
-                    </div>
+                  
                     <div className='col-6'>
 
 
