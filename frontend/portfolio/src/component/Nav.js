@@ -42,7 +42,7 @@ export default class Nav extends Component {
               </li>
 
                 <li className="nav- mr-3 dropdown">
-                <a className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>
+                <a href='/' className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>
                   User
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,7 +51,7 @@ export default class Nav extends Component {
                  
                   
                   <div className="dropdown-divider"></div>
-                  {<Link className="dropdown- mr-2"  style={{textDecoration: 'none', color:'black'}} onClick={this.props.onDelete}>Signout</Link>}
+                  {<Link className="dropdown- mr-2" to='#'  style={{textDecoration: 'none', color:'black'}} onClick={this.props.onDelete}>Signout</Link>}
                   
                 </div>
                 

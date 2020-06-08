@@ -17,13 +17,13 @@ const Footer = () => {
                 </div> 
                 
                 <div className='col-sm-12 col-md-6 col-lg-3' >
-                <i class="fa fa-envelope-o" aria-hidden="true" style={{fontSize:'30px'}}></i>
+                <i className="fa fa-envelope-o" aria-hidden="true" style={{fontSize:'30px'}}></i>
                     <h5 style={{marginTop:'10px', marginBottom:'10px'}}>Email</h5>
                     <p style={{color:'white'}}>kolikay1989@gmail.com</p>
                 </div> 
                 
                 <div className=' col-sm-12 col-md-6 col-lg-3' >
-                <i class="fa fa-phone-square" aria-hidden="true" style={{fontSize:'30px'}}></i>
+                <i className="fa fa-phone-square" aria-hidden="true" style={{fontSize:'30px'}}></i>
                     <h5 style={{marginTop:'10px', marginBottom:'10px'}}>Call Us</h5>
                     <p style={{color:'white'}}>08062842978</p>
                 </div> 

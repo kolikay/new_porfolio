@@ -5,11 +5,15 @@ from django.shortcuts import  redirect
 
 
 
+
+
+
 User = get_user_model()
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(style={'input':'password'}, write_only=True)
     password2 = serializers.CharField(style={'input':'password'}, write_only=True)
+  
 
     class Meta:
         model = UserProfile
@@ -20,6 +24,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
               'style':{'input_type':'password'}
             }
         }
+
+
 
     def validate(self, data):
         pw = data.get('password')
@@ -32,11 +38,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         new_user = User(
         username=validated_data.get('username'),
         email=validated_data.get('email'),
-        first_name = validated_data['name']
+        first_name = validated_data['name'],
         )
         new_user.set_password(validated_data.get('password'))
         new_user.save()
-
+        
         new_user = UserProfile(
         username=validated_data.get('username'),
         email=validated_data.get('email'),
@@ -46,8 +52,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         phone = validated_data.get('phone'),
         age = validated_data.get('age'),
         stack = validated_data.get('stack'))
+
         new_user.save()
         return new_user
+
+      
 
 
 
@@ -56,17 +65,6 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = UserProfile
         fields = ('__all__')
 
-
-
-
-
-
-
-
-    
-
-
-        
 
 
 

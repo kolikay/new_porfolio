@@ -22,7 +22,8 @@ urlpatterns = [
     path('signin/', obtain_jwt_token),
     path('api-token-refresh/', refresh_jwt_token),
     path('', include(router.urls) ),
-    path('<username>/', ProfileAPI.as_view())
+    path('<username>/', ProfileAPI.as_view()),
+   
   
    
 ]

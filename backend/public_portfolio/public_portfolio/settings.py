@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'portfolio',
     'corsheaders',
+    
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
+
+
 
 STATIC_URL = '/static/'
 

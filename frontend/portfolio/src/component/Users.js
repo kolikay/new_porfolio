@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import '../App.css';
-import {Card, CardTitle, CardActions, Button, CardMenu, IconButton, CardText} from 'react-mdl'
+import {Card, CardTitle,  CardText} from 'react-mdl'
 import { Link } from 'react-router-dom'
 
 
@@ -54,12 +54,12 @@ class Homepage extends Component {
                             <Card className='card' key={user.id} shadow={1}>
                                  <Link to={`/users/${user.id}`}>
                                  
-                                    <CardTitle><img src={user.image} style={{ width:"150px", height:'150px'}}/></CardTitle>
+                                    <CardTitle><img src={user.image} style={{ width:"150px", height:'150px'}} alt='icon' /></CardTitle>
                                  </Link> 
                                     <CardText>
                                         <h2 style={{color:'rgb(226, 197, 29)', fontFamily:'cursive'}}>{user.username}</h2>
                                         <h5 style={{color:'black',fontWeight:'bold', fontFamily:'cursive'}}>{user.stack}</h5>
-                                        <a style={{textDecoration:'none', color:'black',fontWeight:'bold', fontFamily:'cursive'  }} href={user.resume} target='_blank'>Resume</a>
+                                        <a style={{textDecoration:'none', color:'black',fontWeight:'bold', fontFamily:'cursive'  }} href={user.resume} target='_blank' rel="noopener noreferrer">Resume</a>
                                        
                                     </CardText>
                                    
