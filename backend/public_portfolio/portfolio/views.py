@@ -41,6 +41,7 @@ class RegisterApiView(generics.CreateAPIView):
 
 
 class ProfileAPI(APIView):
+    permission_classes  = [permissions.AllowAny]
     
    
     def get(self, request, *args, **kwargs):

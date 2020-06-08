@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route , Switch } from 'react-router-dom';
 import Homepage from './Homepage'  
 import SignIn from './SignIn'
@@ -16,8 +16,9 @@ import Protected from './Protected'
 
 
 
-
 const RoutingPage = () => {
+  
+
     return(
     
             <Switch>
@@ -28,14 +29,14 @@ const RoutingPage = () => {
                 <Route exact path ="/auth" component={Protected} />
                 <Authenticated>
                 <Route exact path ="/project" component={Project}/>
-                <Route  exact path ="/profile" component={Profile} />
                 <Route exact path ="/users" component={Users} />
+                <Route  exact path ="/:name" component={Profile} />
                 <Route path = '/users/:id' component={UserDetails}/>
                 </Authenticated>
-            
+                 
             
             </Switch>
       
-    )
-}
+    )}
+
 export default RoutingPage

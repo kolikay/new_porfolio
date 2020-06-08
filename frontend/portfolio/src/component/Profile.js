@@ -1,14 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
+import GetUser from './Helpers/GetUser'
+import axios from 'axios'
 
 
+const user = GetUser()
 
-const Profile = () =>  {
+
+class Profile extends Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            user: [],
+            error: '',
+        }
+    }
+
+
+    componentDidMount(){
+        axios.get(`http://127.0.0.1:8000/${user}`)
+        .then(user => {console.log(user.data.name)
+            this.setState({
+                user:user.data.name})
+        })
+        .catch( error => {
+            console.log(error)
+            this.setState({
+                error: 'User is Un available'
+            })
+        })
+        
+      }
+  render(){
+
 
     return ( 
             <div className='container-fluid'>
                 <div className='row'>
+                    <h3>{this.state.error ? this.state.error : null }</h3>
+
                             <div className='col profile-top'>
-                                <h1  style={{ margin:'0px',fontFamily: 'cursive'}}>Kolawole Fabusuyi</h1>
+                <h1  style={{ margin:'0px',fontFamily: 'cursive'}}>{this.state.user}</h1>
                                     <h4 style={{color:'white', marginTop:'0px',fontFamily: 'cursive'}}>Full Stack Web Developer</h4>
                             </div>
                 </div>
@@ -71,10 +103,10 @@ const Profile = () =>  {
             </div> 
     );
 }
+}
 
+export default Profile
 
- 
-export default Profile;
 
 
 
