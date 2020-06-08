@@ -30,8 +30,8 @@ const RoutingPage = () => {
                 <Authenticated>
                 <Route exact path ="/project" component={Project}/>
                 <Route exact path ="/users" component={Users} />
-                <Route  exact path ="/:name" component={Profile} />
                 <Route path = '/users/:id' component={UserDetails}/>
+                <Route  exact path ="/profile/:name" component={Profile} />
                 </Authenticated>
                  
             

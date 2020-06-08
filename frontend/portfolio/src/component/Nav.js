@@ -35,7 +35,7 @@ export default class Nav extends Component {
                           </li>
                           <li className="nav-item mr-4  ">
                             
-                            { <Link className="nav-link" to={`/${user}`} style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Profile</Link>}
+                            { <Link className="nav-link" to={`/profile/${user}`} style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Profile</Link>}
                           </li>
 
                           <li className="nav- mr-4">
