@@ -47,7 +47,7 @@ const HomepageDetail = () => {
 
             
             <div className='row'>
-                <div className='col-sm-6  col-lg-6'>
+                <div className='col-sm-6   col-lg-6'>
                     <img style={{height:'150px', width:'150px', position:'center center', backgroundSize:'cover'}}
                     src='https://i.imgur.com/N2Rk4fR.png' 
                     alt='icon'

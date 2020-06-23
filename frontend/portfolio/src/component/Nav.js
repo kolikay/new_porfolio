@@ -16,6 +16,7 @@ export default class Nav extends Component {
   return ( 
               
             <Fragment>
+              
               <nav className="navbar navbar-expand-lg mb-0 navbar-dark bg-dark" >
                       <Link className="navbar-brand" to="/" style={{fontSize:'1.5em', color: 'white', fontFamily: 'Courier New Courier monospace'}}>Kolikay</Link>
                       <img className='logo'

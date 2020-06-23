@@ -5,7 +5,7 @@ import {Card, CardTitle,  CardText} from 'react-mdl'
 import { Link } from 'react-router-dom'
 
 
-
+const url = process.env.REACT_APP_API
 
 class Homepage extends Component {
     constructor(props) {
@@ -22,9 +22,8 @@ class Homepage extends Component {
     
     componentDidMount() {
         this.setState({loading : true})
-        axios.get('http://127.0.0.1:8000/users/')
-        .then( responce => {console.log(responce.data)
-        
+        axios.get(`${url}/users/`)
+        .then( responce => {
         this.setState({ 
             loading : false,
             users: responce.data})
@@ -39,7 +38,7 @@ class Homepage extends Component {
 
     render() { 
         const { users, loading, error} = this.state
-        const text = loading && !error ? <p>Please wait while file is loaded from the server.......</p>: null
+        const text = loading && ! error ? <p>Please wait while file is loaded from the server.......</p>: null
         
         return (
             <div className='container '>
