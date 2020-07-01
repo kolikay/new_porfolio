@@ -15,7 +15,7 @@ export default class Signin extends Component {
            
             this.changeHandler = this.changeHandler.bind(this)
             this.handleSubmit = this.handleSubmit.bind(this)
-            this.handleLogout = this.handleLogout.bind(this)
+          
 
 
             this.state = {

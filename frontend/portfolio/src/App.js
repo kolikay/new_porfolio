@@ -5,6 +5,7 @@ import 'react-mdl/extra/material.js';
 import Nav from './component/Nav'
 import RoutingPage from './component/RoutingPage';
 import Footer from './component/Footer';
+import IdleTimerContainer from './component/IdleTimerContainer'
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
     <Nav onDelete = {this.handleLogout}/>
     <RoutingPage />
     <Footer />
+    <IdleTimerContainer ></IdleTimerContainer>
   
   </div> )
 
