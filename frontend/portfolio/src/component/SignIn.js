@@ -4,7 +4,9 @@ import axios from "axios";
 
 
 
+
 const url = 'http://127.0.0.1:8000/signin/'
+
 
 
 export default class Signin extends Component {
@@ -13,6 +15,8 @@ export default class Signin extends Component {
            
             this.changeHandler = this.changeHandler.bind(this)
             this.handleSubmit = this.handleSubmit.bind(this)
+            this.handleLogout = this.handleLogout.bind(this)
+
 
             this.state = {
                 username : '',
@@ -29,39 +33,45 @@ export default class Signin extends Component {
 
         handleSubmit = e => {
         e.preventDefault();
+
+        axios.post(url, this.state)
       
-        axios.post(url, this.state, {
-            headers: {
-                Authorization: `JWT ${localStorage.getItem('token')}`
-              }    
+        // axios.post(url, this.state, {
+        //     headers: {
+        //         Authorization: `JWT ${localStorage.getItem('token')}`
+        //       }    
         
-        })
+        // })
      
-        .then(res => {console.log(res)
-            localStorage.setItem('JWT', res.data.token);
+        .then(res => {
+            
+            localStorage.setItem('JWT', res.data.token)
             localStorage.setItem('username', this.state.username);
             window.location = '/'
             // this.props.history.push('/')
+            
             }).catch( error => {
                 this.setState({
                     error: <p>Login Detail provided is invalid</p>
                 })
             })
+           
+          
         }
 
-      
+        
 
     render() {
 
         const {username, password} = this.state
         return (
-            <div className='container container-fluid'>
+            <div className='container' style={{display:'block', marginLeft:'auto', marginRight:'auto', width:'50%'}}>
                 <div className='row'>
                   
-                    <div className='col-6'>
+                    <div className='col-sm-12 col-md-8 col-lg-8 '>
 
 
-                    <form style={{paddingTop:'35%', width: '70%'}} onSubmit={this.handleSubmit}>
+                    <form style={{paddingTop:'35%', width: '100%'}} onSubmit={this.handleSubmit}>
                 <h3>Sign In</h3>
                 {this.state.error}
 
@@ -97,7 +107,7 @@ export default class Signin extends Component {
                  
                 </div>
 
-                <button style={{backgroundColor: 'rgb(255, 233, 110)'}} type="submit" className="btn  btn-block">Submit</button>
+                <button style={{backgroundColor: 'rgb(255, 233, 110)', color:'white'}} type="submit" className="btn-lg ">Submit</button>
                 <p className="forgot-password text-right">
                     Forgot <a href="/signin">password?</a>
                 </p>

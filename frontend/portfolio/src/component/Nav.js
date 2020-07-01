@@ -47,7 +47,7 @@ export default class Nav extends Component {
 
                           <li>
                             
-                          {<Link className="nav-link"  to='/signup' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Register</Link>}
+                          {<Link className="nav-link"  to='/signup' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Sign Up</Link> }
                           </li> 
                           
                           : null }

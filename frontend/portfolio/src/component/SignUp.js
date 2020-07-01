@@ -101,7 +101,7 @@ function SignUp () {
     })
 
     return (
-        <div className='container container-fluid'>
+        <div className='container'style={{display:'block', marginLeft:'auto', marginRight:'auto', width:'50%'}}>
             <form style={{paddingTop:'7%'}} onSubmit = {formik.handleSubmit}>
             <div className="form-group">
                 <label htmlFor='name'>Name</label>
@@ -237,7 +237,7 @@ function SignUp () {
             <button 
             style={{backgroundColor: 'rgb(255, 233, 110)'}}
             type="submit" 
-            className="btn btn-block">
+            className="btn-lg">
             Sign Up
             </button>
            
