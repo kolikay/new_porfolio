@@ -121,3 +121,7 @@ users{
     flex-basis: 300px;
     font-family: 'Times New Roman', Times, serif;
 }
+.idletimer{
+   display: flex;
+   justify-content: space-around;
+}
