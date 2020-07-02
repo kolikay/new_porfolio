@@ -1,12 +1,11 @@
 import React, { Fragment , Component} from 'react';
 import { Link } from 'react-router-dom'
 import '../App.css';
-import GetToken from './Helpers/GetToken'
 import GetUser from './Helpers/GetUser'
 
 
 const user = GetUser()
-const getToken = GetToken()
+
 
 
 export default class Nav extends Component {
@@ -43,7 +42,7 @@ export default class Nav extends Component {
                             {<Link className="nav-link"  to='/project' style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}}>Project</Link>}
                           </li>
 
-                          { ! getToken ?
+                          { ! user ?
 
                           <li>
                             
@@ -54,7 +53,7 @@ export default class Nav extends Component {
 
                           <li className="nav- mr-4">
 
-                          {  getToken ?
+                          {  user ?
 
                           
                           <Link className="nav-link" to='#'  style={{color:'rgb(187, 182, 110)',fontSize:'18px', fontFamily: 'Courier New Courier monospace'}} onClick={this.props.onDelete}>Sign Out</Link>

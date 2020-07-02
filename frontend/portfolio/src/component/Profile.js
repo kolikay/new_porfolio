@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GetUser from './Helpers/GetUser'
 import axios from 'axios'
+import Cookies from 'js-cookie'
+
 
 
 const user = GetUser()
@@ -18,6 +20,7 @@ class Profile extends Component {
 
 
     componentDidMount(){
+
         axios.get(`http://127.0.0.1:8000/${user}`)
         .then(user => {console.log(user.data.name)
             this.setState({
@@ -33,11 +36,13 @@ class Profile extends Component {
       }
   render(){
 
-
+    const token = Cookies.get('JWT')
     return ( 
             <div className='container-fluid'>
                 <div className='row'>
                     <h3>{this.state.error ? this.state.error : null }</h3>
+                   {!token ? <h3>Sessions Expired, please sign in again</h3> : null }
+
 
                             <div className='col profile-top'>
                 <h1  style={{ margin:'0px',fontFamily: 'cursive'}}>{this.state.user}</h1>

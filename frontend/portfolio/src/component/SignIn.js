@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Cookies from 'js-cookie'
 
 
 
-
-
+const AUTH_TOKEN = Cookies.get('JWT')
+axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 const url = 'http://127.0.0.1:8000/signin/'
 
 
@@ -36,21 +37,18 @@ export default class Signin extends Component {
 
         axios.post(url, this.state)
       
-        // axios.post(url, this.state, {
-        //     headers: {
-        //         Authorization: `JWT ${localStorage.getItem('token')}`
-        //       }    
-        
-        // })
      
         .then(res => {
+            let inThirtyMinutes = new Date(new Date().getTime() + 60 * (1000 * 30));
+            Cookies.set('JWT', res.data.token, { expires: inThirtyMinutes})
             
-            localStorage.setItem('JWT', res.data.token)
+            // localStorage.setItem('JWT', res.data.token)
             localStorage.setItem('username', this.state.username);
             window.location = '/'
             // this.props.history.push('/')
             
             }).catch( error => {
+                
                 this.setState({
                     error: <p>Login Detail provided is invalid</p>
                 })
@@ -64,6 +62,7 @@ export default class Signin extends Component {
     render() {
 
         const {username, password} = this.state
+       
         return (
             <div className='container' style={{display:'block', marginLeft:'auto', marginRight:'auto', width:'50%'}}>
                 <div className='row'>

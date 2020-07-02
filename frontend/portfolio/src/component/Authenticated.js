@@ -1,35 +1,29 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { withRouter } from 'react-router-dom'
-import GetToken from './Helpers/GetToken'
+import Cookies from 'js-cookie'
 
 
 
 
 class Authenticated extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            user : undefined
-         }
-    }
-    componentDidMount(){
-        const jwt = GetToken()
+    
+    
+    UNSAFE_componentWillMount(){
+        const jwt = Cookies.get('JWT')
         if(!jwt){
             this.props.history.push('/auth')
         }
-        axios.get('http://127.0.0.1:8000/users/', {headers: {Authorization: `Bearer ${jwt}`}}).then(res => this.setState({
-            user: res.data 
-        })).catch(err => {
-            localStorage.removeItem('JWT');
-            this.props.history.push('/auth')
-        })}
+      
+    }
     render() { 
-        if(this.state.user === undefined){
-            return(<div><h1>Loading.............</h1></div>)
-        }
-    return ( <div>{this.props.children}</div> );
+    const jwt = Cookies.get('JWT')
+    return ( 
+    jwt ? 
+    <div>{this.props.children}</div> : null
+    
+    );
     }
 }
  
 export default withRouter(Authenticated);
+

@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import IdleTimer from 'react-idle-timer'
 import Modal from 'react-modal'
 import GetUser from './Helpers/GetUser'
+import Cookies from 'js-cookie'
+
 
 
 const user = GetUser()
@@ -32,12 +34,20 @@ function IdleTimerContainer(){
     const handleLogout = () => {
         clearTimeout(sessionTimeOutRef.current)
         localStorage.clear();
+        Cookies.remove('JWT')
         window.location = "/signin"
       }
     
 
     return(<div >
-        <Modal isOpen={modalIsOpen} >
+        <Modal isOpen={modalIsOpen} 
+          style={{
+            overlay: {zIndex:'10000'},
+            content: {color: 'black'}
+          }}
+        
+        
+        >
             <h2 style={{textAlign:'center'}}>You have been idle for a while</h2>
             <h5 style={{textAlign:'center'}}>You will be logged out soon</h5>
             <div className='idletimer'>
@@ -45,7 +55,7 @@ function IdleTimerContainer(){
                 <button className="btn btn-secondary" onClick={stayActive} >Keep Me Signed In</button>
             </div>
         </Modal>
-        <IdleTimer ref={IdleTimerRef} timeout={5000 * (60 * 5) } onIdle={onIdle}></IdleTimer>
+        <IdleTimer ref={IdleTimerRef} timeout={1000 * (60 * 15 )  } onIdle={onIdle}></IdleTimer>
         </div>)
 
 }

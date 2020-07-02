@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../App.css';
 import {Card, CardTitle,  CardText} from 'react-mdl'
 import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 
 const url = process.env.REACT_APP_API
@@ -14,6 +15,7 @@ class Homepage extends Component {
             loading : false,
             users : [],
             error : '',
+            
            
          }
     }
@@ -39,16 +41,17 @@ class Homepage extends Component {
     render() { 
         const { users, loading, error} = this.state
         const text = loading && ! error ? <p>Please wait while file is loaded from the server.......</p>: null
-        
-        return (
-            <div className='container '>
+        const token = Cookies.get('JWT')
+        return ( 
+            <div className='container ' >
                     <h3>{text}</h3>
+                    {!token ? <h3>Sessions Expired, please sign in again</h3> : null }
 
 
 
                     <div className='row'>
                         <div className='col user' >
-
+                        
 
                             {users ? users.map(user => 
                             
