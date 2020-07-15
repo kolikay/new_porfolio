@@ -2,7 +2,7 @@
 import React from 'react';
 import { useFormik } from 'formik'
 import axios from 'axios'
-import GetToken from './Helpers/GetToken'
+import { authToken } from './Helpers/AuthToken'
 
 
 
@@ -13,39 +13,23 @@ import GetToken from './Helpers/GetToken'
 
 function SignUp () {
     
-    const token = GetToken()
-    const url = 'http://127.0.0.1:8000/signup/'
+    const token = authToken()
+    const url = 'http://127.0.0.1:8000/api/auth/register/'
     const formik = useFormik({
         initialValues: {
             name : '',
-            age  : '',
             email : '',   
-            phone  : '',    
-            address : '',  
-            about : '',  
             username  : '',
             password : '',
             password2 : '',
-            stack: '',
             error:  ''
             
         },
         onSubmit: values => {
-                    console.log(values)
+                    console.log("hello", values)
                     // axios.post('http://127.0.0.1:8000/signup/', values)
-                    axios.post(url, values, {
-                        headers: {
-                            'authorization': token,
-                            'Accept' : 'application/json',
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                 
-
-
-
-
-
+                    // axios.post(url, values, )
+ 
                     .then(responce=> {console.log(responce)
                         if(responce.status===201){
                             alert('Registration was Successful, Signin to continue')
@@ -64,23 +48,11 @@ function SignUp () {
             if (!values.name){
                 errors.name = 'Required'
             }
-            if (!values.age){
-                errors.age = 'Required'
-            }
-            if (!values.email){
-                errors.email = 'Required'
-            }else if (!/^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/.test(values.email)){
-                errors.email = "Invalid Email Format"
-            }
-            if (!values.phone){
-                errors.phone = 'Required'
-            }
-            if (!values.address){
-                errors.address = 'Required'
-            }
-            if (!values.about){
-                errors.about = 'Required'
-            }
+            if (!values.email) {
+                errors.email = 'Required';
+              } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+                errors.email = 'Invalid email address';
+              }
             if (!values.username){
                 errors.username = 'Required'
             }
@@ -90,11 +62,6 @@ function SignUp () {
             if (!values.password2){
                 errors.password2 = 'Required'
             }
-            if (!values.stack){
-                errors.stack = 'Required'
-            }
-
-
             return errors
         }
 
@@ -102,7 +69,7 @@ function SignUp () {
 
     return (
         <div className='container'style={{display:'block', marginLeft:'auto', marginRight:'auto', width:'50%'}}>
-            <form style={{paddingTop:'7%'}} onSubmit = {formik.handleSubmit}>
+            <form style={{paddingTop:'7%'}} onSubmit={formik.handleSubmit}>
             <div className="form-group">
                 <label htmlFor='name'>Name</label>
                 <input 
@@ -132,81 +99,16 @@ function SignUp () {
             </div>
 
             <div className="form-group">
-                <label  htmlFor='name'>Stack</label>
+                <label  htmlFor='email'>Email</label>
                 <input 
-                name = 'stack'
-                value = {formik.values.stack}
-                onChange = {formik.handleChange}
-                onBlur = {formik.handleBlur}
-                type="text" 
-                className="form-control" 
-                placeholder="Stack" />
-                {formik.touched.stack &&formik.errors.stack ? <div style = {{color:'red'}}>{formik.errors.stack}</div> : null}
-            </div>
-
-            <div className="form-group">
-                <label  htmlFor='name'>Address</label>
-                <input
-                name = 'address'
-                value = {formik.values.address}
-                onChange = {formik.handleChange}
-                onBlur = {formik.handleBlur}
-                type="text" 
-                className="form-control" 
-                placeholder="Address" />
-                {formik.touched.address && formik.errors.address ? <div style = {{color:'red'}}>{formik.errors.address}</div> : null}
-            </div>
-
-            <div className="form-group">
-                <label  htmlFor='name'>Age</label>
-                <input
-                name = 'age'
-                value = {formik.values.age}
-                onChange = {formik.handleChange}
-                onBlur = {formik.handleBlur}
-                type="number" 
-                className="form-control" 
-                placeholder="Age" />
-                {formik.touched.age && formik.errors.age ? <div style = {{color:'red'}}>{formik.errors.age}</div> : null}
-            </div>
-
-            <div className="form-group">
-                <label  htmlFor='name'>Phone</label>
-                <input
-                name = 'phone'
-                value = {formik.values.phone}
-                onChange = {formik.handleChange}
-                onBlur = {formik.handleBlur}
-                type="number" 
-                className="form-control" 
-                placeholder="Phone" />
-                {formik.touched.phone && formik.errors.phone ? <div style = {{color:'red'}}>{formik.errors.phone}</div> : null}
-            </div>
-
-            <div className="form-group">
-                <label  htmlFor='name'>about</label>
-                <textarea
-                name = 'about'
-                value = {formik.values.about}
-                onChange = {formik.handleChange}
-                onBlur = {formik.handleBlur}
-                className="form-control" 
-                placeholder="about "> 
-                {formik.touched.about && formik.errors.about ? <div style = {{color:'red'}}>{formik.errors.about}</div> : null}
-                </textarea>
-            </div>
-
-            <div className="form-group">
-                <label  htmlFor='email'>Email address</label>
-                <input
                 name = 'email'
                 value = {formik.values.email}
                 onChange = {formik.handleChange}
                 onBlur = {formik.handleBlur}
-                type="email" 
+                type="text" 
                 className="form-control" 
-                placeholder="Enter email" />
-                {formik.touched.email && formik.errors.email ? <div style = {{color:'red'}}>{formik.errors.email}</div> : null}
+                placeholder="Email" />
+                {formik.touched.email &&formik.errors.email ? <div style = {{color:'red'}}>{formik.errors.email}</div> : null}
             </div>
 
             <div className="form-group">
@@ -281,7 +183,7 @@ export default SignUp
 //     }
 //     submitHandler = e => {
 //         e.preventDefault()
-//         axios.post('http://127.0.0.1:8000/signup/', this.state)
+//         axios.post('http://127.0.0.1:8000/api/auth/register/', this.state)
 //         .then(responce=> {console.log(responce)
 //             if(responce.status===201){
 //                 window.location = "/"

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from portfolio.models import UserProfile
+from portfolio.models import UsersProfile
 
 
 
-admin.site.register(UserProfile)
+admin.site.register(UsersProfile)
 

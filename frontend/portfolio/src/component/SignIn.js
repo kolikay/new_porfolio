@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 
 const AUTH_TOKEN = Cookies.get('JWT')
 axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-const url = 'http://127.0.0.1:8000/signin/'
+const url = 'http://127.0.0.1:8000/api/auth/login/'
 
 
 
