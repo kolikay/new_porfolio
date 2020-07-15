@@ -1,14 +1,8 @@
-
 import React from 'react';
 import { useFormik } from 'formik'
 import axios from 'axios'
 import { authToken } from './Helpers/AuthToken'
-
-
-
-
-
-
+import Cookies from 'js-cookie'
 
 
 function SignUp () {
@@ -17,26 +11,34 @@ function SignUp () {
     const url = 'http://127.0.0.1:8000/api/auth/register/'
     const formik = useFormik({
         initialValues: {
-            name : '',
             email : '',   
             username  : '',
             password : '',
-            password2 : '',
-            error:  ''
+            confirm_password : '',
+           
             
         },
         onSubmit: values => {
                     console.log("hello", values)
-                    // axios.post('http://127.0.0.1:8000/signup/', values)
-                    // axios.post(url, values, )
+                    axios.post(url, values, {
+                        // Headers: {
+                        //     'Accept' : 'application/json',
+                        //     'Content-Type': 'application/json'
+                        // }
+                    })
  
-                    .then(responce=> {console.log(responce)
-                        if(responce.status===201){
-                            alert('Registration was Successful, Signin to continue')
-                            window.location = "/signin"
+                    .then(res=> {console.log(res.data.User.username)
+                        if(res.status===200){
+                        let inThirtyMinutes = new Date(new Date().getTime() + 60 * (1000 * 30));
+                        Cookies.set('JWT', res.data.token, { expires: inThirtyMinutes})
+                        
+                        localStorage.setItem('Token', res.data.token)
+                        localStorage.setItem('username', res.data.User.username);
+                        window.location = '/'
                         }
                     })
                    .catch(error => {
+                       console.log(error)
                     error = <p>Registration Failed</p>
                     alert(error.props.children)
                     window.location = '/signup'
@@ -45,9 +47,6 @@ function SignUp () {
         validate: values => {
             let errors = {}
 
-            if (!values.name){
-                errors.name = 'Required'
-            }
             if (!values.email) {
                 errors.email = 'Required';
               } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -59,8 +58,8 @@ function SignUp () {
             if (!values.password){
                 errors.password = 'Required'
             }
-            if (!values.password2){
-                errors.password2 = 'Required'
+            if (!values.confirm_password){
+                errors.confirm_password = 'Required'
             }
             return errors
         }
@@ -70,19 +69,6 @@ function SignUp () {
     return (
         <div className='container'style={{display:'block', marginLeft:'auto', marginRight:'auto', width:'50%'}}>
             <form style={{paddingTop:'7%'}} onSubmit={formik.handleSubmit}>
-            <div className="form-group">
-                <label htmlFor='name'>Name</label>
-                <input 
-                id = 'name'
-                name = 'name'
-                value = {formik.values.name}
-                onChange = {formik.handleChange}
-                onBlur = {formik.handleBlur}
-                type="text" 
-                className="form-control" 
-                placeholder="Name" />
-                {formik.touched.name && formik.errors.name ? <div style = {{color:'red'}}>{formik.errors.name}</div> : null}
-            </div>
 
             <div className="form-group">
                 <label  htmlFor='name'>Username</label>
@@ -124,16 +110,16 @@ function SignUp () {
                 {formik.touched.password && formik.errors.password ? <div style = {{color:'red'}}>{formik.errors.password}</div> : null}
             </div>
             <div className="form-group">
-                <label  htmlFor='password2'>Confirm Password</label>
+                <label  htmlFor='confirm_password'>Confirm Password</label>
                 <input
-                name = 'password2'
-                value = {formik.values.password2}
+                name = 'confirm_password'
+                value = {formik.values.confirm_password}
                 onChange = {formik.handleChange}
                 onBlur = {formik.handleBlur}
                 type="password" 
                 className="form-control" 
                 placeholder="Confirm password" />
-                {formik.touched.password2 && formik.errors.password2 ? <div style = {{color:'red'}}>{formik.errors.password2}</div> : null}
+                {formik.touched.confirm_password && formik.errors.confirm_password ? <div style = {{color:'red'}}>{formik.errors.confirm_password}</div> : null}
             </div>
 
             <button 

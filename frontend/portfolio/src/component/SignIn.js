@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 
 
 const AUTH_TOKEN = Cookies.get('JWT')
-axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+
 const url = 'http://127.0.0.1:8000/api/auth/login/'
 
 
@@ -42,7 +42,7 @@ export default class Signin extends Component {
             let inThirtyMinutes = new Date(new Date().getTime() + 60 * (1000 * 30));
             Cookies.set('JWT', res.data.token, { expires: inThirtyMinutes})
             
-            // localStorage.setItem('JWT', res.data.token)
+            localStorage.setItem('Token', res.data.token)
             localStorage.setItem('username', this.state.username);
             window.location = '/'
             // this.props.history.push('/')
